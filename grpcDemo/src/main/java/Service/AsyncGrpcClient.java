@@ -1,49 +1,62 @@
 package Service;
 
-import com.yrrhelp.grpc.User.APIResponse;
-import com.yrrhelp.grpc.User.LoginRequest;
-import com.yrrhelp.grpc.userGrpc;
-import com.yrrhelp.grpc.userGrpc.userBlockingStub;
+import com.cmpe275.lab1.userGrpc;
+import com.cmpe275.lab1.User.MesonetDataList;
+import com.cmpe275.lab1.userGrpc.userStub;
 
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.stub.StreamObserver;
 
-import java.util.Date;
-
 public class AsyncGrpcClient {
+	
+	private static long start ;
 
-    public static void main(String[] args) throws InterruptedException {
-
-        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost",9090).usePlaintext().build();
-
-        // stubs - generate from proto
-
-//		userBlockingStub userStub = userGrpc.newBlockingStub(channel);
-        userGrpc.userStub userStub = userGrpc.newStub(channel);
-
-        LoginRequest loginrequest = LoginRequest.newBuilder().setUsername("RAM").setPassword("RAM").build();
-        LoginRequest loginRequestFail = LoginRequest.newBuilder().setUsername("RAM").setPassword("RAMWE").build();
-        //APIResponse response = userStub.login(loginrequest);
-
-        userStub.login(loginrequest, new LoginCallBack());
-        userStub.login(loginRequestFail, new LoginCallBack());
-        userStub.login(loginrequest, new LoginCallBack());
-        userStub.login(loginRequestFail, new LoginCallBack());
-        userStub.login(loginrequest, new LoginCallBack());
-
-        Thread.sleep(1000);
-        //System.out.println(response.getResponsemessage());
-        System.out.println("Done");
-
-    }
-
-
-    private static class LoginCallBack implements StreamObserver<APIResponse> {
+	public static void main(String[] args) {
+		
+		ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost",9090).maxInboundMessageSize(99999999).usePlaintext().build();
+		
+		
+		userStub userStub = userGrpc.newStub(channel);
+		userStub userStub2 = userGrpc.newStub(channel);
+		
+//		long start = System.currentTimeMillis();
+		
+		try {
+			start = System.currentTimeMillis();
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		System.out.println("first");
+		userStub.getMesonetData2(null, new mesonetCallback());
+		System.out.println("Second");
+		userStub2.getMesonetData2(null, new mesonetCallback());
+		
+//		long end = System.currentTimeMillis();
+		
+		 try {
+			Thread.sleep(100000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	private static class mesonetCallback implements StreamObserver<MesonetDataList> {
+		
         @Override
-        public void onNext(APIResponse value) {
-            System.out.println(System.currentTimeMillis());
-            System.out.println("Received response :"+ value);
+        public void onNext(MesonetDataList value) {
+        	
+        	for(int i =0; i< value.getMesonetDataCount(); i++) {
+//    			System.out.println(i + " "+value.getMesonetData(i).getStationID() + " "+ value.getMesonetData(i).getStationName());
+    			
+    		}
+        	
+        	long end = System.currentTimeMillis();
+        	
+//            System.out.println("end time " + System.currentTimeMillis());
+            System.out.println("time taken : " + (end-start));
         }
 
         @Override
@@ -53,11 +66,9 @@ public class AsyncGrpcClient {
 
         @Override
         public void onCompleted() {
+        	
             System.out.println("Stream completed");
         }
     }
 
 }
-
-
-

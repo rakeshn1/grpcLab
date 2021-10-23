@@ -65,6 +65,7 @@ public class UserService extends userImplBase {
 	@Override
 	public void getMesonetData(Empty request, StreamObserver<MesonetDataList> responseObserver) {
 	
+		System.out.println("request started");
 		MesonetDataList.Builder dataListBuilder = MesonetDataList.newBuilder();
 		
 		
@@ -77,7 +78,544 @@ public class UserService extends userImplBase {
 		}
 		
 		
+		System.out.println("ended");
+		responseObserver.onNext(dataListBuilder.build());
+		responseObserver.onCompleted();
+	}
+	
+	@Override
+	public void getMesonetData2(Empty request, StreamObserver<MesonetDataList> responseObserver) {
+	
+		System.out.println("request started");
+		MesonetDataList.Builder dataListBuilder = MesonetDataList.newBuilder();
 		
+		
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		for (gash.obs.madis.MesonetData d : data) {
+			// System.out.println(d.getStationID());
+			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+			dataBuilder.setStationID(d.getStationID());
+			dataBuilder.setStationName(d.getStationName());
+			dataBuilder.setStationType(d.getStationType());
+			dataListBuilder.addMesonetData(dataBuilder);
+		}
+		
+		
+		
+		
+		System.out.println("ended");
 		responseObserver.onNext(dataListBuilder.build());
 		responseObserver.onCompleted();
 	}

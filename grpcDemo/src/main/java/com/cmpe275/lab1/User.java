@@ -3372,11 +3372,12 @@ public final class User {
       "\030\002 \001(\005\"J\n\013MesonetData\022\021\n\tstationID\030\001 \001(\t" +
       "\022\023\n\013stationName\030\002 \001(\t\022\023\n\013stationType\030\003 \001" +
       "(\t\"4\n\017MesonetDataList\022!\n\013mesonetData\030\001 \003" +
-      "(\0132\014.MesonetData\"\007\n\005Empty2x\n\004user\022$\n\005log" +
-      "in\022\r.LoginRequest\032\014.APIResponse\022\036\n\006logou" +
-      "t\022\006.Empty\032\014.APIResponse\022*\n\016getMesonetDat" +
-      "a\022\006.Empty\032\020.MesonetDataListB\022\n\020com.cmpe2" +
-      "75.lab1b\006proto3"
+      "(\0132\014.MesonetData\"\007\n\005Empty2\245\001\n\004user\022$\n\005lo" +
+      "gin\022\r.LoginRequest\032\014.APIResponse\022\036\n\006logo" +
+      "ut\022\006.Empty\032\014.APIResponse\022*\n\016getMesonetDa" +
+      "ta\022\006.Empty\032\020.MesonetDataList\022+\n\017getMeson" +
+      "etData2\022\006.Empty\032\020.MesonetDataListB\022\n\020com" +
+      ".cmpe275.lab1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
