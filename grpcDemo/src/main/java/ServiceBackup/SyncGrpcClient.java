@@ -19,15 +19,16 @@ public class SyncGrpcClient {
 		long start = System.currentTimeMillis();
 		
 		
-//		MesonetDataList mesonetData = userStub.getMesonetData2(null);
-//		MesonetDataList mesonetData2 = userStub.getMesonetData2(null);
+		MesonetDataList mesonetData = userStub.getMesonetData2(null);
+//		for(int i = 0 ; i< 100;i++) {
+//			System.out.println(mesonetData.getMesonetData(i));
+//		}
+		System.out.println("first done" );
+		MesonetDataList mesonetData2 = userStub.getMesonetData2(null);
 		
-		for(int i=0;i<500;i++) {
-			userStub.getMesonetData2(null);
-			System.out.println("Total time taken for serving "+ i +  " requests synchronously: " + (System.currentTimeMillis()-start));
-			
-		}
-		
+//		for(int i = 0 ; i< 100;i++) {
+//			System.out.println(mesonetData2.getMesonetData(i));
+//		}
 		
 		long end = System.currentTimeMillis();
 		System.out.println("time taken : " + (end-start));

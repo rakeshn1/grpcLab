@@ -15,15 +15,16 @@ import io.grpc.stub.StreamObserver;
 
 public class UserService extends userImplBase {
 	
-	
-	private final String name; 
 	private List<gash.obs.madis.MesonetData> data;
+	private String a = "Hello World";
 	
 	
-	public UserService(String name) {
-		this.name = name;
+	public UserService() {
+		
 		MesonetProcessor fetcher = new MesonetProcessor();	
 		data = fetcher.parseData();
+		
+		
 	}
 	
 
@@ -68,12 +69,21 @@ public class UserService extends userImplBase {
 		System.out.println("request started");
 		MesonetDataList.Builder dataListBuilder = MesonetDataList.newBuilder();
 		
-		for (gash.obs.madis.MesonetData d : data) {
+		
+//		for (gash.obs.madis.MesonetData d : data) {
+//			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+//			dataBuilder.setStationID(d.getStationID());
+//			dataBuilder.setStationName(d.getStationName());
+//			dataBuilder.setStationType(d.getStationType());
+//			dataListBuilder.addMesonetData(dataBuilder);
+//		}
+		for (int i=0;i<5;i++) {
 			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
-			dataBuilder.setStationID(d.getStationID());
-			dataBuilder.setStationName(d.getStationName());
-			dataBuilder.setStationType(d.getStationType());
-			dataListBuilder.addMesonetData(dataBuilder);
+			String a = "Hello World";
+			dataBuilder.setStationID(a);
+			dataBuilder.setStationName(a);
+			dataBuilder.setStationType(a);
+			dataListBuilder.addMesonetData(dataBuilder).build();
 		}
 		
 		responseObserver.onNext(dataListBuilder.build());
@@ -101,4 +111,24 @@ public class UserService extends userImplBase {
 		responseObserver.onCompleted();
 		System.out.println("ended");
 	}
+
+//	@Override
+//	public void getMesonetData(Empty request, StreamObserver<MesonetData> responseObserver) {
+//		
+//		
+//		
+//		MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+//		
+//		
+//		
+//		dataBuilder.setStationID(data.get(0).getStationID());
+//		dataBuilder.setStationName(data.get(0).getStationName());
+//		dataBuilder.setStationType(data.get(0).getStationType());
+//		
+//		responseObserver.onNext(dataBuilder.build());
+//		responseObserver.onCompleted();
+//		
+//	}
+	
+
 }

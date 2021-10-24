@@ -11,7 +11,6 @@ public class FetchData {
 		MesonetProcessor fetcher = new MesonetProcessor();	
 //		
 		List<MesonetData> a = fetcher.parseData();
-		System.out.println(a.size());
 	}
 
 }
