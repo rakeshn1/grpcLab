@@ -12,6 +12,7 @@ com/cmpe275/lab1/User$MesonetData.class
 com/cmpe275/lab1/User$1.class
 Service/FetchData.class
 com/cmpe275/lab1/User$MesonetDataList$Builder.class
+Service/AsyncGrpcClientMultiServer$1.class
 com/cmpe275/lab1/User$APIResponse$Builder.class
 com/cmpe275/lab1/userGrpc$userBaseDescriptorSupplier.class
 com/cmpe275/lab1/userGrpc$MethodHandlers.class
@@ -23,6 +24,7 @@ gash/obs/madis/Station.class
 com/cmpe275/lab1/User$LoginRequest.class
 gash/obs/madis/DataSet.class
 Service/GrpcServer.class
+Service/AsyncGrpcClientMultiServer.class
 com/cmpe275/lab1/User$Empty$Builder.class
 com/cmpe275/lab1/userGrpc$userMethodDescriptorSupplier.class
 com/cmpe275/lab1/User$LoginRequest$Builder.class
@@ -34,11 +36,14 @@ com/cmpe275/lab1/userGrpc$1.class
 Service/AsyncGrpcClient$1.class
 com/cmpe275/lab1/User.class
 gash/obs/madis/ObsQCRange.class
+Service/MultiNameResolver.class
 Service/AsyncGrpcClient$mesonetCallback.class
 com/cmpe275/lab1/User$MesonetDataListOrBuilder.class
 com/cmpe275/lab1/User$Empty$1.class
 gash/obs/madis/Catalog.class
+Service/MultiNameResolver$1.class
 com/cmpe275/lab1/userGrpc$userFutureStub.class
+Service/AsyncGrpcClientMultiServer$mesonetCallback.class
 com/cmpe275/lab1/User$Empty.class
 com/cmpe275/lab1/userGrpc$userFileDescriptorSupplier.class
 Service/SyncGrpcClient.class

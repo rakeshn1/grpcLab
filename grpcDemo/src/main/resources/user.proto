@@ -7,6 +7,7 @@ service user{
     rpc logout(Empty)  returns (APIResponse);
     rpc getMesonetData(Empty) returns (MesonetDataList);
     rpc getMesonetData2(Empty) returns (MesonetDataList);
+    rpc getMesonetDataStream(Empty) returns (stream MesonetDataList);
 }
 
 message LoginRequest{

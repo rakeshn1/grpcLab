@@ -155,6 +155,38 @@ public final class userGrpc {
      return getGetMesonetData2Method;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.cmpe275.lab1.User.Empty,
+      com.cmpe275.lab1.User.MesonetDataList> getGetMesonetDataStreamMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "getMesonetDataStream",
+      requestType = com.cmpe275.lab1.User.Empty.class,
+      responseType = com.cmpe275.lab1.User.MesonetDataList.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<com.cmpe275.lab1.User.Empty,
+      com.cmpe275.lab1.User.MesonetDataList> getGetMesonetDataStreamMethod() {
+    io.grpc.MethodDescriptor<com.cmpe275.lab1.User.Empty, com.cmpe275.lab1.User.MesonetDataList> getGetMesonetDataStreamMethod;
+    if ((getGetMesonetDataStreamMethod = userGrpc.getGetMesonetDataStreamMethod) == null) {
+      synchronized (userGrpc.class) {
+        if ((getGetMesonetDataStreamMethod = userGrpc.getGetMesonetDataStreamMethod) == null) {
+          userGrpc.getGetMesonetDataStreamMethod = getGetMesonetDataStreamMethod = 
+              io.grpc.MethodDescriptor.<com.cmpe275.lab1.User.Empty, com.cmpe275.lab1.User.MesonetDataList>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(
+                  "user", "getMesonetDataStream"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.cmpe275.lab1.User.Empty.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.cmpe275.lab1.User.MesonetDataList.getDefaultInstance()))
+                  .setSchemaDescriptor(new userMethodDescriptorSupplier("getMesonetDataStream"))
+                  .build();
+          }
+        }
+     }
+     return getGetMesonetDataStreamMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -210,6 +242,13 @@ public final class userGrpc {
       asyncUnimplementedUnaryCall(getGetMesonetData2Method(), responseObserver);
     }
 
+    /**
+     */
+    public void getMesonetDataStream(com.cmpe275.lab1.User.Empty request,
+        io.grpc.stub.StreamObserver<com.cmpe275.lab1.User.MesonetDataList> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetMesonetDataStreamMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -240,6 +279,13 @@ public final class userGrpc {
                 com.cmpe275.lab1.User.Empty,
                 com.cmpe275.lab1.User.MesonetDataList>(
                   this, METHODID_GET_MESONET_DATA2)))
+          .addMethod(
+            getGetMesonetDataStreamMethod(),
+            asyncServerStreamingCall(
+              new MethodHandlers<
+                com.cmpe275.lab1.User.Empty,
+                com.cmpe275.lab1.User.MesonetDataList>(
+                  this, METHODID_GET_MESONET_DATA_STREAM)))
           .build();
     }
   }
@@ -293,6 +339,14 @@ public final class userGrpc {
       asyncUnaryCall(
           getChannel().newCall(getGetMesonetData2Method(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void getMesonetDataStream(com.cmpe275.lab1.User.Empty request,
+        io.grpc.stub.StreamObserver<com.cmpe275.lab1.User.MesonetDataList> responseObserver) {
+      asyncServerStreamingCall(
+          getChannel().newCall(getGetMesonetDataStreamMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -339,6 +393,14 @@ public final class userGrpc {
     public com.cmpe275.lab1.User.MesonetDataList getMesonetData2(com.cmpe275.lab1.User.Empty request) {
       return blockingUnaryCall(
           getChannel(), getGetMesonetData2Method(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public java.util.Iterator<com.cmpe275.lab1.User.MesonetDataList> getMesonetDataStream(
+        com.cmpe275.lab1.User.Empty request) {
+      return blockingServerStreamingCall(
+          getChannel(), getGetMesonetDataStreamMethod(), getCallOptions(), request);
     }
   }
 
@@ -397,6 +459,7 @@ public final class userGrpc {
   private static final int METHODID_LOGOUT = 1;
   private static final int METHODID_GET_MESONET_DATA = 2;
   private static final int METHODID_GET_MESONET_DATA2 = 3;
+  private static final int METHODID_GET_MESONET_DATA_STREAM = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -429,6 +492,10 @@ public final class userGrpc {
           break;
         case METHODID_GET_MESONET_DATA2:
           serviceImpl.getMesonetData2((com.cmpe275.lab1.User.Empty) request,
+              (io.grpc.stub.StreamObserver<com.cmpe275.lab1.User.MesonetDataList>) responseObserver);
+          break;
+        case METHODID_GET_MESONET_DATA_STREAM:
+          serviceImpl.getMesonetDataStream((com.cmpe275.lab1.User.Empty) request,
               (io.grpc.stub.StreamObserver<com.cmpe275.lab1.User.MesonetDataList>) responseObserver);
           break;
         default:
@@ -496,6 +563,7 @@ public final class userGrpc {
               .addMethod(getLogoutMethod())
               .addMethod(getGetMesonetDataMethod())
               .addMethod(getGetMesonetData2Method())
+              .addMethod(getGetMesonetDataStreamMethod())
               .build();
         }
       }

@@ -17,62 +17,37 @@ public class UserService extends userImplBase {
 	
 	
 	private final String name; 
-	private List<gash.obs.madis.MesonetData> data;
+	private final int port; 
+	private List<gash.obs.madis.MesonetData>  data;
 	
 	
-	public UserService(String name) {
+	public UserService(String name,int port) {
+		this.port = port;
 		this.name = name;
 		MesonetProcessor fetcher = new MesonetProcessor();	
 		data = fetcher.parseData();
-	}
-	
-
-	@Override
-	public void login(LoginRequest request, StreamObserver<APIResponse> responseObserver) {
-		System.out.println("Inside login");
-
-		String username = request.getUsername();
-		String password = request.getPassword();
-
-		APIResponse.Builder response = APIResponse.newBuilder();
-		if (username.equals(password)) {
-
-			// return success message	
-
-			response.setResponseCode(0).setResponsemessage("SUCCESS");	
-
-		} else {
-			response.setResponseCode(100).setResponsemessage("INVALID PASSWORD");
-		}
-		Random _rand = new Random(System.nanoTime());
-		try {
-			Thread.sleep(_rand.nextInt(5000) + 1);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		responseObserver.onNext(response.build());
-		responseObserver.onCompleted();
-	}
-
-	@Override
-	public void logout(Empty request, StreamObserver<APIResponse> responseObserver) {
-		// TODO Auto-generated method stub
-		super.logout(request, responseObserver);
 	}
 
 
 	@Override
 	public void getMesonetData(Empty request, StreamObserver<MesonetDataList> responseObserver) {
 	
-		System.out.println("request started");
+		System.out.println("request started at : " + port);
 		MesonetDataList.Builder dataListBuilder = MesonetDataList.newBuilder();
+//		
+//		for (gash.obs.madis.MesonetData d : data) {
+//			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
+//			dataBuilder.setStationID(d.getStationID());
+//			dataBuilder.setStationName(d.getStationName());
+//			dataBuilder.setStationType(d.getStationType());
+//			dataListBuilder.addMesonetData(dataBuilder);
+//		}
 		
-		for (gash.obs.madis.MesonetData d : data) {
+		for (int i=0; i<10;i++) {
 			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
-			dataBuilder.setStationID(d.getStationID());
-			dataBuilder.setStationName(d.getStationName());
-			dataBuilder.setStationType(d.getStationType());
+			dataBuilder.setStationID("id");
+			dataBuilder.setStationName("name");
+			dataBuilder.setStationType("type");
 			dataListBuilder.addMesonetData(dataBuilder);
 		}
 		
@@ -81,24 +56,5 @@ public class UserService extends userImplBase {
 		System.out.println("ended");
 	}
 	
-	@Override
-	public void getMesonetData2(Empty request, StreamObserver<MesonetDataList> responseObserver) {
 	
-		System.out.println("request started");
-		MesonetDataList.Builder dataListBuilder = MesonetDataList.newBuilder();
-		
-		
-		for (gash.obs.madis.MesonetData d : data) {
-			// System.out.println(d.getStationID());
-			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
-			dataBuilder.setStationID(d.getStationID());
-			dataBuilder.setStationName(d.getStationName());
-			dataBuilder.setStationType(d.getStationType());
-			dataListBuilder.addMesonetData(dataBuilder);
-		}
-		
-		responseObserver.onNext(dataListBuilder.build());
-		responseObserver.onCompleted();
-		System.out.println("ended");
-	}
 }

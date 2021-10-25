@@ -16,7 +16,7 @@ import io.grpc.NameResolverProvider;
 import io.grpc.NameResolverRegistry;
 import io.grpc.stub.StreamObserver;
 
-public class AsyncGrpcClient {
+public class AsyncGrpcClientMultiServer {
 
 	private static long start;
 	private static long count = 0;
@@ -24,13 +24,28 @@ public class AsyncGrpcClient {
 	public static void main(String[] args) {
 		
 
-		ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 9000).maxInboundMessageSize(1024 * 1024 * 1024).usePlaintext()
+		ManagedChannel channel1 = ManagedChannelBuilder.forAddress("localhost", 9000).maxInboundMessageSize(1024 * 1024 * 1024).usePlaintext()
 				.build();
 		
-		userStub userStub = userGrpc.newStub(channel);
+		ManagedChannel channel2 = ManagedChannelBuilder.forAddress("localhost", 9001)
+				.maxInboundMessageSize(1024 * 1024 * 1024).usePlaintext()
+				.build();
+		
+		ManagedChannel channel3 = ManagedChannelBuilder.forAddress("localhost", 9002)
+				.maxInboundMessageSize(1024 * 1024 * 1024).usePlaintext()
+				.build();
+		
+		userStub userStub1 = userGrpc.newStub(channel1);
+		userStub userStub2 = userGrpc.newStub(channel2);
+		userStub userStub3 = userGrpc.newStub(channel3);
+		List<userStub> userStubs = new ArrayList<userStub> ();
+		userStubs.add(userStub1);
+		userStubs.add(userStub2);
+		userStubs.add(userStub3);
 		
 
 		try {
+			System.out.println("started");
 			start = System.currentTimeMillis();
 		} catch (Exception e1) {
 			e1.printStackTrace();
@@ -38,9 +53,8 @@ public class AsyncGrpcClient {
 
 		int j = 0;
 		for (int i = 0; i < 5000; i++) {
-//			userStubs.get(j%3).getMesonetData(null, new mesonetCallback());
-//			j++;
-			userStub.getMesonetData(null, new mesonetCallback());
+			userStubs.get(j%3).getMesonetData(null, new mesonetCallback());
+			j++;
 		}
 
 		try {
