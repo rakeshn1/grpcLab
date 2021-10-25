@@ -41,8 +41,8 @@ public class MesonetProcessor {
 		
 
 		File dataSource = new File("/Users/anilgubbala/Development/275_data/20120201_0100.gz");
-		File catF = new File("/Users/anilgubbala/Dropbox/SJSU/Fall21/275/lab-g01/reader/catalog.csv");
-		File outdir = new File("/Users/anilgubbala/Dropbox/SJSU/Fall21/275/lab-g01/output");
+//		File catF = new File("/Users/anilgubbala/Dropbox/SJSU/Fall21/275/lab-g01/reader/catalog.csv");
+//		File outdir = new File("/Users/anilgubbala/Dropbox/SJSU/Fall21/275/lab-g01/output");
 
 		// filters
 		Date startDate = null;
@@ -52,8 +52,8 @@ public class MesonetProcessor {
 		
 		List<MesonetData> data = null;
 
-		System.out.println("\n\nSource: " + dataSource + "\nCatalog: " + catF.getAbsolutePath() + "\nOutput: "
-				+ outdir.getAbsolutePath());
+//		System.out.println("\n\nSource: " + dataSource + "\nCatalog: " + catF.getAbsolutePath() + "\nOutput: "
+//				+ outdir.getAbsolutePath());
 
 		long startTime = System.currentTimeMillis();
 		try {
