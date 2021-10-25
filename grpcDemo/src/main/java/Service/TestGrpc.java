@@ -1,6 +1,6 @@
 package Service;
 
-public class AddWork {
+public class TestGrpc {
 	
 	public static void main(String[] args) throws InterruptedException {
 		
