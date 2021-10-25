@@ -1,6 +1,6 @@
 package Service;
 
-public class TestGrpc {
+public class AsyncTestGrpc {
 	
 	public static void main(String[] args) throws InterruptedException {
 		

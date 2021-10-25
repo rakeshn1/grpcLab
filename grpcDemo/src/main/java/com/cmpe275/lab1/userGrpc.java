@@ -187,6 +187,38 @@ public final class userGrpc {
      return getGetWeatherMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.cmpe275.lab1.User.Empty,
+      com.cmpe275.lab1.User.MesonetDataList> getGetTopTenMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "getTopTen",
+      requestType = com.cmpe275.lab1.User.Empty.class,
+      responseType = com.cmpe275.lab1.User.MesonetDataList.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.cmpe275.lab1.User.Empty,
+      com.cmpe275.lab1.User.MesonetDataList> getGetTopTenMethod() {
+    io.grpc.MethodDescriptor<com.cmpe275.lab1.User.Empty, com.cmpe275.lab1.User.MesonetDataList> getGetTopTenMethod;
+    if ((getGetTopTenMethod = userGrpc.getGetTopTenMethod) == null) {
+      synchronized (userGrpc.class) {
+        if ((getGetTopTenMethod = userGrpc.getGetTopTenMethod) == null) {
+          userGrpc.getGetTopTenMethod = getGetTopTenMethod = 
+              io.grpc.MethodDescriptor.<com.cmpe275.lab1.User.Empty, com.cmpe275.lab1.User.MesonetDataList>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "user", "getTopTen"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.cmpe275.lab1.User.Empty.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.cmpe275.lab1.User.MesonetDataList.getDefaultInstance()))
+                  .setSchemaDescriptor(new userMethodDescriptorSupplier("getTopTen"))
+                  .build();
+          }
+        }
+     }
+     return getGetTopTenMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -249,6 +281,13 @@ public final class userGrpc {
       asyncUnimplementedUnaryCall(getGetWeatherMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void getTopTen(com.cmpe275.lab1.User.Empty request,
+        io.grpc.stub.StreamObserver<com.cmpe275.lab1.User.MesonetDataList> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetTopTenMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -286,6 +325,13 @@ public final class userGrpc {
                 com.cmpe275.lab1.User.StationRequest,
                 com.cmpe275.lab1.User.Weather>(
                   this, METHODID_GET_WEATHER)))
+          .addMethod(
+            getGetTopTenMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.cmpe275.lab1.User.Empty,
+                com.cmpe275.lab1.User.MesonetDataList>(
+                  this, METHODID_GET_TOP_TEN)))
           .build();
     }
   }
@@ -347,6 +393,14 @@ public final class userGrpc {
       asyncUnaryCall(
           getChannel().newCall(getGetWeatherMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void getTopTen(com.cmpe275.lab1.User.Empty request,
+        io.grpc.stub.StreamObserver<com.cmpe275.lab1.User.MesonetDataList> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetTopTenMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -402,6 +456,13 @@ public final class userGrpc {
       return blockingUnaryCall(
           getChannel(), getGetWeatherMethod(), getCallOptions(), request);
     }
+
+    /**
+     */
+    public com.cmpe275.lab1.User.MesonetDataList getTopTen(com.cmpe275.lab1.User.Empty request) {
+      return blockingUnaryCall(
+          getChannel(), getGetTopTenMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -453,6 +514,14 @@ public final class userGrpc {
       return futureUnaryCall(
           getChannel().newCall(getGetWeatherMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.cmpe275.lab1.User.MesonetDataList> getTopTen(
+        com.cmpe275.lab1.User.Empty request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetTopTenMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_MESONET_DATA = 0;
@@ -460,6 +529,7 @@ public final class userGrpc {
   private static final int METHODID_GET_ALL_DATA = 2;
   private static final int METHODID_GET_STATION_DATA = 3;
   private static final int METHODID_GET_WEATHER = 4;
+  private static final int METHODID_GET_TOP_TEN = 5;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -497,6 +567,10 @@ public final class userGrpc {
         case METHODID_GET_WEATHER:
           serviceImpl.getWeather((com.cmpe275.lab1.User.StationRequest) request,
               (io.grpc.stub.StreamObserver<com.cmpe275.lab1.User.Weather>) responseObserver);
+          break;
+        case METHODID_GET_TOP_TEN:
+          serviceImpl.getTopTen((com.cmpe275.lab1.User.Empty) request,
+              (io.grpc.stub.StreamObserver<com.cmpe275.lab1.User.MesonetDataList>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -564,6 +638,7 @@ public final class userGrpc {
               .addMethod(getGetAllDataMethod())
               .addMethod(getGetStationDataMethod())
               .addMethod(getGetWeatherMethod())
+              .addMethod(getGetTopTenMethod())
               .build();
         }
       }

@@ -11,7 +11,6 @@ gash/obs/madis/MesonetProcessor$1.class
 com/cmpe275/lab1/userGrpc$userStub.class
 com/cmpe275/lab1/User$MesonetData.class
 com/cmpe275/lab1/User$1.class
-Service/FetchData.class
 com/cmpe275/lab1/User$MesonetDataList$Builder.class
 com/cmpe275/lab1/User$Wind$1.class
 Service/AsyncGrpcClientLoadBalancer$1.class
@@ -32,6 +31,7 @@ com/cmpe275/lab1/User$Time$1.class
 gash/obs/madis/Station.class
 com/cmpe275/lab1/User$LocationData$1.class
 gash/obs/madis/DataSet.class
+Service/TestGrpc.class
 com/cmpe275/lab1/User$Time$Builder.class
 com/cmpe275/lab1/User$StationRequestOrBuilder.class
 com/cmpe275/lab1/User$StationData$Builder.class
@@ -72,7 +72,6 @@ com/cmpe275/lab1/User$Empty.class
 com/cmpe275/lab1/userGrpc$userFileDescriptorSupplier.class
 Service/SyncGrpcClient.class
 gash/obs/madis/MesonetProcessor.class
-Service/AddWork.class
 com/cmpe275/lab1/User$StationRequest$Builder.class
 gash/obs/madis/MesonetData$PrecipType.class
 com/cmpe275/lab1/User$WeatherOrBuilder.class

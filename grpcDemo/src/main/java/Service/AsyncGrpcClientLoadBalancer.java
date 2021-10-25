@@ -37,7 +37,7 @@ public class AsyncGrpcClientLoadBalancer {
 	public void addWork() {
 		balancer++;
 		count++;
-		userStubs.get(balancer%3).getMesonetDataStream(null, new mesonetCallback());
+		userStubs.get(balancer%3).getTopTen(null, new mesonetCallback());
 	}
 	
 	public boolean hasWork() {

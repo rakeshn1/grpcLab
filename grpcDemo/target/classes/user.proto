@@ -8,6 +8,7 @@ service user{
     rpc getAllData(Empty) returns (AllData);
     rpc getStationData(StationRequest) returns (AllData);
     rpc getWeather(StationRequest) returns (Weather);
+    rpc getTopTen(Empty) returns (MesonetDataList);
 }
 
 message StationRequest {

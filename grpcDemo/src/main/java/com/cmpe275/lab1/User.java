@@ -8798,13 +8798,14 @@ public final class User {
       "ipAccum\030\002 \001(\001\022\022\n\nprecipRate\030\003 \001(\001\022\027\n\017pre" +
       "cipIntensity\030\004 \001(\005\"4\n\017MesonetDataList\022!\n" +
       "\013mesonetData\030\001 \003(\0132\014.MesonetData\"\007\n\005Empt" +
-      "y2\334\001\n\004user\022*\n\016getMesonetData\022\006.Empty\032\020.M" +
+      "y2\203\002\n\004user\022*\n\016getMesonetData\022\006.Empty\032\020.M" +
       "esonetDataList\0222\n\024getMesonetDataStream\022\006" +
       ".Empty\032\020.MesonetDataList0\001\022\036\n\ngetAllData" +
       "\022\006.Empty\032\010.AllData\022+\n\016getStationData\022\017.S" +
       "tationRequest\032\010.AllData\022\'\n\ngetWeather\022\017." +
-      "StationRequest\032\010.WeatherB\022\n\020com.cmpe275." +
-      "lab1b\006proto3"
+      "StationRequest\032\010.Weather\022%\n\tgetTopTen\022\006." +
+      "Empty\032\020.MesonetDataListB\022\n\020com.cmpe275.l" +
+      "ab1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

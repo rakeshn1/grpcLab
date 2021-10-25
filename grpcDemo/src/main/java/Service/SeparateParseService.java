@@ -14,17 +14,17 @@ import com.cmpe275.lab1.userGrpc.userImplBase;
 import gash.obs.madis.MesonetProcessor;
 import io.grpc.stub.StreamObserver;
 
-public class UserService extends userImplBase {
+public class SeparateParseService extends userImplBase {
 
 	private final String name;
 	private final int port;
 	private List<gash.obs.madis.MesonetData> data;
 
-	public UserService(String name, int port) {
+	public SeparateParseService(String name, int port) {
 		this.port = port;
 		this.name = name;
-		MesonetProcessor fetcher = new MesonetProcessor();	
-		data = fetcher.parseData();
+//		MesonetProcessor fetcher = new MesonetProcessor();	
+//		data = fetcher.parseData();
 	}
 
 	@Override
@@ -33,6 +33,9 @@ public class UserService extends userImplBase {
 		ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
 		Runnable r = () -> {
 			try {
+
+				MesonetProcessor fetcher = new MesonetProcessor();
+				data = fetcher.parseData();
 
 				System.out.println("request started at : " + port);
 				MesonetDataList.Builder dataListBuilder = MesonetDataList.newBuilder();
@@ -62,6 +65,10 @@ public class UserService extends userImplBase {
 
 	@Override
 	public void getMesonetDataStream(Empty request, StreamObserver<MesonetDataList> responseObserver) {
+
+		MesonetProcessor fetcher = new MesonetProcessor();
+		data = fetcher.parseData();
+
 		System.out.println("request started at : " + port);
 		MesonetDataList.Builder dataListBuilder = MesonetDataList.newBuilder();
 		for (gash.obs.madis.MesonetData d : data) {
@@ -75,24 +82,18 @@ public class UserService extends userImplBase {
 			responseObserver.onNext(mesonetDataList);
 			
 		}
+
 		responseObserver.onCompleted();
+		
 		System.out.println("ended");
+
 	}
 
 	@Override
 	public void getTopTen(Empty request, StreamObserver<MesonetDataList> responseObserver) {
-		System.out.println("request started at : " + port);
-		MesonetDataList.Builder dataListBuilder = MesonetDataList.newBuilder();
-		for (int i=0;i<10;i++) {
-			MesonetData.Builder dataBuilder = MesonetData.newBuilder();
-			dataBuilder.setStationID(data.get(i).getStationID());
-			dataBuilder.setStationName(data.get(i).getStationName());
-			dataBuilder.setStationType(data.get(i).getStationType());
-			dataListBuilder.addMesonetData(dataBuilder);
-			MesonetDataList mesonetDataList = dataListBuilder.build();
-			responseObserver.onNext(mesonetDataList);
-		}
-		responseObserver.onCompleted();
-		System.out.println("ended");
+		
 	}
+	
+	
+
 }
