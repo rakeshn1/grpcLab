@@ -32,7 +32,7 @@ public class GrpcServer {
 
 	private static void startServer(String name, int port) throws IOException, InterruptedException {
 		System.out.println("starting GRPC Server");
-		Server server = ServerBuilder.forPort(port).addService(new UserService(name,port)).build();
+		Server server = ServerBuilder.forPort(port).directExecutor().addService(new UserService(name,port)).build();
 		server.start();
 		System.out.println("server started at " + server.getPort());
 		server.awaitTermination();

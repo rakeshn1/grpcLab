@@ -14,45 +14,34 @@ public final class User {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface LoginRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:LoginRequest)
+  public interface StationRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:StationRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string username = 1;</code>
+     * <code>string stationID = 1;</code>
      */
-    java.lang.String getUsername();
+    java.lang.String getStationID();
     /**
-     * <code>string username = 1;</code>
+     * <code>string stationID = 1;</code>
      */
     com.google.protobuf.ByteString
-        getUsernameBytes();
-
-    /**
-     * <code>string password = 2;</code>
-     */
-    java.lang.String getPassword();
-    /**
-     * <code>string password = 2;</code>
-     */
-    com.google.protobuf.ByteString
-        getPasswordBytes();
+        getStationIDBytes();
   }
   /**
-   * Protobuf type {@code LoginRequest}
+   * Protobuf type {@code StationRequest}
    */
-  public  static final class LoginRequest extends
+  public  static final class StationRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:LoginRequest)
-      LoginRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:StationRequest)
+      StationRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use LoginRequest.newBuilder() to construct.
-    private LoginRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use StationRequest.newBuilder() to construct.
+    private StationRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private LoginRequest() {
-      username_ = "";
-      password_ = "";
+    private StationRequest() {
+      stationID_ = "";
     }
 
     @java.lang.Override
@@ -60,7 +49,7 @@ public final class User {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private LoginRequest(
+    private StationRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -82,13 +71,7 @@ public final class User {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              username_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              password_ = s;
+              stationID_ = s;
               break;
             }
             default: {
@@ -112,79 +95,45 @@ public final class User {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.cmpe275.lab1.User.internal_static_LoginRequest_descriptor;
+      return com.cmpe275.lab1.User.internal_static_StationRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.cmpe275.lab1.User.internal_static_LoginRequest_fieldAccessorTable
+      return com.cmpe275.lab1.User.internal_static_StationRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.cmpe275.lab1.User.LoginRequest.class, com.cmpe275.lab1.User.LoginRequest.Builder.class);
+              com.cmpe275.lab1.User.StationRequest.class, com.cmpe275.lab1.User.StationRequest.Builder.class);
     }
 
-    public static final int USERNAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object username_;
+    public static final int STATIONID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object stationID_;
     /**
-     * <code>string username = 1;</code>
+     * <code>string stationID = 1;</code>
      */
-    public java.lang.String getUsername() {
-      java.lang.Object ref = username_;
+    public java.lang.String getStationID() {
+      java.lang.Object ref = stationID_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        username_ = s;
+        stationID_ = s;
         return s;
       }
     }
     /**
-     * <code>string username = 1;</code>
+     * <code>string stationID = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getUsernameBytes() {
-      java.lang.Object ref = username_;
+        getStationIDBytes() {
+      java.lang.Object ref = stationID_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        username_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PASSWORD_FIELD_NUMBER = 2;
-    private volatile java.lang.Object password_;
-    /**
-     * <code>string password = 2;</code>
-     */
-    public java.lang.String getPassword() {
-      java.lang.Object ref = password_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        password_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string password = 2;</code>
-     */
-    public com.google.protobuf.ByteString
-        getPasswordBytes() {
-      java.lang.Object ref = password_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        password_ = b;
+        stationID_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -205,11 +154,8 @@ public final class User {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getUsernameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, username_);
-      }
-      if (!getPasswordBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, password_);
+      if (!getStationIDBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, stationID_);
       }
       unknownFields.writeTo(output);
     }
@@ -220,11 +166,8 @@ public final class User {
       if (size != -1) return size;
 
       size = 0;
-      if (!getUsernameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, username_);
-      }
-      if (!getPasswordBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, password_);
+      if (!getStationIDBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, stationID_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -236,16 +179,14 @@ public final class User {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof com.cmpe275.lab1.User.LoginRequest)) {
+      if (!(obj instanceof com.cmpe275.lab1.User.StationRequest)) {
         return super.equals(obj);
       }
-      com.cmpe275.lab1.User.LoginRequest other = (com.cmpe275.lab1.User.LoginRequest) obj;
+      com.cmpe275.lab1.User.StationRequest other = (com.cmpe275.lab1.User.StationRequest) obj;
 
       boolean result = true;
-      result = result && getUsername()
-          .equals(other.getUsername());
-      result = result && getPassword()
-          .equals(other.getPassword());
+      result = result && getStationID()
+          .equals(other.getStationID());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -257,78 +198,76 @@ public final class User {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
-      hash = (53 * hash) + getUsername().hashCode();
-      hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
-      hash = (53 * hash) + getPassword().hashCode();
+      hash = (37 * hash) + STATIONID_FIELD_NUMBER;
+      hash = (53 * hash) + getStationID().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static com.cmpe275.lab1.User.LoginRequest parseFrom(
+    public static com.cmpe275.lab1.User.StationRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.cmpe275.lab1.User.LoginRequest parseFrom(
+    public static com.cmpe275.lab1.User.StationRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.cmpe275.lab1.User.LoginRequest parseFrom(
+    public static com.cmpe275.lab1.User.StationRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.cmpe275.lab1.User.LoginRequest parseFrom(
+    public static com.cmpe275.lab1.User.StationRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.cmpe275.lab1.User.LoginRequest parseFrom(byte[] data)
+    public static com.cmpe275.lab1.User.StationRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.cmpe275.lab1.User.LoginRequest parseFrom(
+    public static com.cmpe275.lab1.User.StationRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.cmpe275.lab1.User.LoginRequest parseFrom(java.io.InputStream input)
+    public static com.cmpe275.lab1.User.StationRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.cmpe275.lab1.User.LoginRequest parseFrom(
+    public static com.cmpe275.lab1.User.StationRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.cmpe275.lab1.User.LoginRequest parseDelimitedFrom(java.io.InputStream input)
+    public static com.cmpe275.lab1.User.StationRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static com.cmpe275.lab1.User.LoginRequest parseDelimitedFrom(
+    public static com.cmpe275.lab1.User.StationRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static com.cmpe275.lab1.User.LoginRequest parseFrom(
+    public static com.cmpe275.lab1.User.StationRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static com.cmpe275.lab1.User.LoginRequest parseFrom(
+    public static com.cmpe275.lab1.User.StationRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -341,7 +280,7 @@ public final class User {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.cmpe275.lab1.User.LoginRequest prototype) {
+    public static Builder newBuilder(com.cmpe275.lab1.User.StationRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -357,26 +296,26 @@ public final class User {
       return builder;
     }
     /**
-     * Protobuf type {@code LoginRequest}
+     * Protobuf type {@code StationRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:LoginRequest)
-        com.cmpe275.lab1.User.LoginRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:StationRequest)
+        com.cmpe275.lab1.User.StationRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.cmpe275.lab1.User.internal_static_LoginRequest_descriptor;
+        return com.cmpe275.lab1.User.internal_static_StationRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.cmpe275.lab1.User.internal_static_LoginRequest_fieldAccessorTable
+        return com.cmpe275.lab1.User.internal_static_StationRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.cmpe275.lab1.User.LoginRequest.class, com.cmpe275.lab1.User.LoginRequest.Builder.class);
+                com.cmpe275.lab1.User.StationRequest.class, com.cmpe275.lab1.User.StationRequest.Builder.class);
       }
 
-      // Construct using com.cmpe275.lab1.User.LoginRequest.newBuilder()
+      // Construct using com.cmpe275.lab1.User.StationRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -394,9 +333,7 @@ public final class User {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        username_ = "";
-
-        password_ = "";
+        stationID_ = "";
 
         return this;
       }
@@ -404,17 +341,17 @@ public final class User {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.cmpe275.lab1.User.internal_static_LoginRequest_descriptor;
+        return com.cmpe275.lab1.User.internal_static_StationRequest_descriptor;
       }
 
       @java.lang.Override
-      public com.cmpe275.lab1.User.LoginRequest getDefaultInstanceForType() {
-        return com.cmpe275.lab1.User.LoginRequest.getDefaultInstance();
+      public com.cmpe275.lab1.User.StationRequest getDefaultInstanceForType() {
+        return com.cmpe275.lab1.User.StationRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public com.cmpe275.lab1.User.LoginRequest build() {
-        com.cmpe275.lab1.User.LoginRequest result = buildPartial();
+      public com.cmpe275.lab1.User.StationRequest build() {
+        com.cmpe275.lab1.User.StationRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -422,10 +359,9 @@ public final class User {
       }
 
       @java.lang.Override
-      public com.cmpe275.lab1.User.LoginRequest buildPartial() {
-        com.cmpe275.lab1.User.LoginRequest result = new com.cmpe275.lab1.User.LoginRequest(this);
-        result.username_ = username_;
-        result.password_ = password_;
+      public com.cmpe275.lab1.User.StationRequest buildPartial() {
+        com.cmpe275.lab1.User.StationRequest result = new com.cmpe275.lab1.User.StationRequest(this);
+        result.stationID_ = stationID_;
         onBuilt();
         return result;
       }
@@ -464,22 +400,18 @@ public final class User {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.cmpe275.lab1.User.LoginRequest) {
-          return mergeFrom((com.cmpe275.lab1.User.LoginRequest)other);
+        if (other instanceof com.cmpe275.lab1.User.StationRequest) {
+          return mergeFrom((com.cmpe275.lab1.User.StationRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.cmpe275.lab1.User.LoginRequest other) {
-        if (other == com.cmpe275.lab1.User.LoginRequest.getDefaultInstance()) return this;
-        if (!other.getUsername().isEmpty()) {
-          username_ = other.username_;
-          onChanged();
-        }
-        if (!other.getPassword().isEmpty()) {
-          password_ = other.password_;
+      public Builder mergeFrom(com.cmpe275.lab1.User.StationRequest other) {
+        if (other == com.cmpe275.lab1.User.StationRequest.getDefaultInstance()) return this;
+        if (!other.getStationID().isEmpty()) {
+          stationID_ = other.stationID_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -497,11 +429,11 @@ public final class User {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.cmpe275.lab1.User.LoginRequest parsedMessage = null;
+        com.cmpe275.lab1.User.StationRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.cmpe275.lab1.User.LoginRequest) e.getUnfinishedMessage();
+          parsedMessage = (com.cmpe275.lab1.User.StationRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -511,140 +443,71 @@ public final class User {
         return this;
       }
 
-      private java.lang.Object username_ = "";
+      private java.lang.Object stationID_ = "";
       /**
-       * <code>string username = 1;</code>
+       * <code>string stationID = 1;</code>
        */
-      public java.lang.String getUsername() {
-        java.lang.Object ref = username_;
+      public java.lang.String getStationID() {
+        java.lang.Object ref = stationID_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          username_ = s;
+          stationID_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string username = 1;</code>
+       * <code>string stationID = 1;</code>
        */
       public com.google.protobuf.ByteString
-          getUsernameBytes() {
-        java.lang.Object ref = username_;
+          getStationIDBytes() {
+        java.lang.Object ref = stationID_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          username_ = b;
+          stationID_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string username = 1;</code>
+       * <code>string stationID = 1;</code>
        */
-      public Builder setUsername(
+      public Builder setStationID(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        username_ = value;
+        stationID_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string username = 1;</code>
+       * <code>string stationID = 1;</code>
        */
-      public Builder clearUsername() {
+      public Builder clearStationID() {
         
-        username_ = getDefaultInstance().getUsername();
+        stationID_ = getDefaultInstance().getStationID();
         onChanged();
         return this;
       }
       /**
-       * <code>string username = 1;</code>
+       * <code>string stationID = 1;</code>
        */
-      public Builder setUsernameBytes(
+      public Builder setStationIDBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        username_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object password_ = "";
-      /**
-       * <code>string password = 2;</code>
-       */
-      public java.lang.String getPassword() {
-        java.lang.Object ref = password_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          password_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string password = 2;</code>
-       */
-      public com.google.protobuf.ByteString
-          getPasswordBytes() {
-        java.lang.Object ref = password_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          password_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string password = 2;</code>
-       */
-      public Builder setPassword(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        password_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string password = 2;</code>
-       */
-      public Builder clearPassword() {
-        
-        password_ = getDefaultInstance().getPassword();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string password = 2;</code>
-       */
-      public Builder setPasswordBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        password_ = value;
+        stationID_ = value;
         onChanged();
         return this;
       }
@@ -661,654 +524,41 @@ public final class User {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:LoginRequest)
+      // @@protoc_insertion_point(builder_scope:StationRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:LoginRequest)
-    private static final com.cmpe275.lab1.User.LoginRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:StationRequest)
+    private static final com.cmpe275.lab1.User.StationRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.cmpe275.lab1.User.LoginRequest();
+      DEFAULT_INSTANCE = new com.cmpe275.lab1.User.StationRequest();
     }
 
-    public static com.cmpe275.lab1.User.LoginRequest getDefaultInstance() {
+    public static com.cmpe275.lab1.User.StationRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<LoginRequest>
-        PARSER = new com.google.protobuf.AbstractParser<LoginRequest>() {
+    private static final com.google.protobuf.Parser<StationRequest>
+        PARSER = new com.google.protobuf.AbstractParser<StationRequest>() {
       @java.lang.Override
-      public LoginRequest parsePartialFrom(
+      public StationRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LoginRequest(input, extensionRegistry);
+        return new StationRequest(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<LoginRequest> parser() {
+    public static com.google.protobuf.Parser<StationRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<LoginRequest> getParserForType() {
+    public com.google.protobuf.Parser<StationRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.cmpe275.lab1.User.LoginRequest getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface APIResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:APIResponse)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string responsemessage = 1;</code>
-     */
-    java.lang.String getResponsemessage();
-    /**
-     * <code>string responsemessage = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getResponsemessageBytes();
-
-    /**
-     * <code>int32 responseCode = 2;</code>
-     */
-    int getResponseCode();
-  }
-  /**
-   * Protobuf type {@code APIResponse}
-   */
-  public  static final class APIResponse extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:APIResponse)
-      APIResponseOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use APIResponse.newBuilder() to construct.
-    private APIResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private APIResponse() {
-      responsemessage_ = "";
-      responseCode_ = 0;
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private APIResponse(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              responsemessage_ = s;
-              break;
-            }
-            case 16: {
-
-              responseCode_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.cmpe275.lab1.User.internal_static_APIResponse_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.cmpe275.lab1.User.internal_static_APIResponse_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.cmpe275.lab1.User.APIResponse.class, com.cmpe275.lab1.User.APIResponse.Builder.class);
-    }
-
-    public static final int RESPONSEMESSAGE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object responsemessage_;
-    /**
-     * <code>string responsemessage = 1;</code>
-     */
-    public java.lang.String getResponsemessage() {
-      java.lang.Object ref = responsemessage_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        responsemessage_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string responsemessage = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getResponsemessageBytes() {
-      java.lang.Object ref = responsemessage_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        responsemessage_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int RESPONSECODE_FIELD_NUMBER = 2;
-    private int responseCode_;
-    /**
-     * <code>int32 responseCode = 2;</code>
-     */
-    public int getResponseCode() {
-      return responseCode_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!getResponsemessageBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, responsemessage_);
-      }
-      if (responseCode_ != 0) {
-        output.writeInt32(2, responseCode_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!getResponsemessageBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, responsemessage_);
-      }
-      if (responseCode_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, responseCode_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.cmpe275.lab1.User.APIResponse)) {
-        return super.equals(obj);
-      }
-      com.cmpe275.lab1.User.APIResponse other = (com.cmpe275.lab1.User.APIResponse) obj;
-
-      boolean result = true;
-      result = result && getResponsemessage()
-          .equals(other.getResponsemessage());
-      result = result && (getResponseCode()
-          == other.getResponseCode());
-      result = result && unknownFields.equals(other.unknownFields);
-      return result;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + RESPONSEMESSAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getResponsemessage().hashCode();
-      hash = (37 * hash) + RESPONSECODE_FIELD_NUMBER;
-      hash = (53 * hash) + getResponseCode();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.cmpe275.lab1.User.APIResponse parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.cmpe275.lab1.User.APIResponse parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.cmpe275.lab1.User.APIResponse parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.cmpe275.lab1.User.APIResponse parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.cmpe275.lab1.User.APIResponse parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.cmpe275.lab1.User.APIResponse parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.cmpe275.lab1.User.APIResponse parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.cmpe275.lab1.User.APIResponse parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.cmpe275.lab1.User.APIResponse parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.cmpe275.lab1.User.APIResponse parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.cmpe275.lab1.User.APIResponse parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.cmpe275.lab1.User.APIResponse parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.cmpe275.lab1.User.APIResponse prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code APIResponse}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:APIResponse)
-        com.cmpe275.lab1.User.APIResponseOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.cmpe275.lab1.User.internal_static_APIResponse_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.cmpe275.lab1.User.internal_static_APIResponse_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.cmpe275.lab1.User.APIResponse.class, com.cmpe275.lab1.User.APIResponse.Builder.class);
-      }
-
-      // Construct using com.cmpe275.lab1.User.APIResponse.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        responsemessage_ = "";
-
-        responseCode_ = 0;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.cmpe275.lab1.User.internal_static_APIResponse_descriptor;
-      }
-
-      @java.lang.Override
-      public com.cmpe275.lab1.User.APIResponse getDefaultInstanceForType() {
-        return com.cmpe275.lab1.User.APIResponse.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.cmpe275.lab1.User.APIResponse build() {
-        com.cmpe275.lab1.User.APIResponse result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.cmpe275.lab1.User.APIResponse buildPartial() {
-        com.cmpe275.lab1.User.APIResponse result = new com.cmpe275.lab1.User.APIResponse(this);
-        result.responsemessage_ = responsemessage_;
-        result.responseCode_ = responseCode_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return (Builder) super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return (Builder) super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return (Builder) super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return (Builder) super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return (Builder) super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.cmpe275.lab1.User.APIResponse) {
-          return mergeFrom((com.cmpe275.lab1.User.APIResponse)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.cmpe275.lab1.User.APIResponse other) {
-        if (other == com.cmpe275.lab1.User.APIResponse.getDefaultInstance()) return this;
-        if (!other.getResponsemessage().isEmpty()) {
-          responsemessage_ = other.responsemessage_;
-          onChanged();
-        }
-        if (other.getResponseCode() != 0) {
-          setResponseCode(other.getResponseCode());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.cmpe275.lab1.User.APIResponse parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.cmpe275.lab1.User.APIResponse) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private java.lang.Object responsemessage_ = "";
-      /**
-       * <code>string responsemessage = 1;</code>
-       */
-      public java.lang.String getResponsemessage() {
-        java.lang.Object ref = responsemessage_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          responsemessage_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string responsemessage = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getResponsemessageBytes() {
-        java.lang.Object ref = responsemessage_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          responsemessage_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string responsemessage = 1;</code>
-       */
-      public Builder setResponsemessage(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        responsemessage_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string responsemessage = 1;</code>
-       */
-      public Builder clearResponsemessage() {
-        
-        responsemessage_ = getDefaultInstance().getResponsemessage();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string responsemessage = 1;</code>
-       */
-      public Builder setResponsemessageBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        responsemessage_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int responseCode_ ;
-      /**
-       * <code>int32 responseCode = 2;</code>
-       */
-      public int getResponseCode() {
-        return responseCode_;
-      }
-      /**
-       * <code>int32 responseCode = 2;</code>
-       */
-      public Builder setResponseCode(int value) {
-        
-        responseCode_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 responseCode = 2;</code>
-       */
-      public Builder clearResponseCode() {
-        
-        responseCode_ = 0;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:APIResponse)
-    }
-
-    // @@protoc_insertion_point(class_scope:APIResponse)
-    private static final com.cmpe275.lab1.User.APIResponse DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.cmpe275.lab1.User.APIResponse();
-    }
-
-    public static com.cmpe275.lab1.User.APIResponse getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<APIResponse>
-        PARSER = new com.google.protobuf.AbstractParser<APIResponse>() {
-      @java.lang.Override
-      public APIResponse parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new APIResponse(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<APIResponse> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<APIResponse> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.cmpe275.lab1.User.APIResponse getDefaultInstanceForType() {
+    public com.cmpe275.lab1.User.StationRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2133,6 +1383,6134 @@ public final class User {
 
     @java.lang.Override
     public com.cmpe275.lab1.User.MesonetData getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface AllDataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:AllData)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.StationData stationData = 1;</code>
+     */
+    boolean hasStationData();
+    /**
+     * <code>.StationData stationData = 1;</code>
+     */
+    com.cmpe275.lab1.User.StationData getStationData();
+    /**
+     * <code>.StationData stationData = 1;</code>
+     */
+    com.cmpe275.lab1.User.StationDataOrBuilder getStationDataOrBuilder();
+
+    /**
+     * <code>.LocationData locationData = 2;</code>
+     */
+    boolean hasLocationData();
+    /**
+     * <code>.LocationData locationData = 2;</code>
+     */
+    com.cmpe275.lab1.User.LocationData getLocationData();
+    /**
+     * <code>.LocationData locationData = 2;</code>
+     */
+    com.cmpe275.lab1.User.LocationDataOrBuilder getLocationDataOrBuilder();
+
+    /**
+     * <code>.Time time = 3;</code>
+     */
+    boolean hasTime();
+    /**
+     * <code>.Time time = 3;</code>
+     */
+    com.cmpe275.lab1.User.Time getTime();
+    /**
+     * <code>.Time time = 3;</code>
+     */
+    com.cmpe275.lab1.User.TimeOrBuilder getTimeOrBuilder();
+
+    /**
+     * <code>.Weather weather = 4;</code>
+     */
+    boolean hasWeather();
+    /**
+     * <code>.Weather weather = 4;</code>
+     */
+    com.cmpe275.lab1.User.Weather getWeather();
+    /**
+     * <code>.Weather weather = 4;</code>
+     */
+    com.cmpe275.lab1.User.WeatherOrBuilder getWeatherOrBuilder();
+
+    /**
+     * <code>.Wind wind = 5;</code>
+     */
+    boolean hasWind();
+    /**
+     * <code>.Wind wind = 5;</code>
+     */
+    com.cmpe275.lab1.User.Wind getWind();
+    /**
+     * <code>.Wind wind = 5;</code>
+     */
+    com.cmpe275.lab1.User.WindOrBuilder getWindOrBuilder();
+
+    /**
+     * <code>.Precipitation precipitation = 6;</code>
+     */
+    boolean hasPrecipitation();
+    /**
+     * <code>.Precipitation precipitation = 6;</code>
+     */
+    com.cmpe275.lab1.User.Precipitation getPrecipitation();
+    /**
+     * <code>.Precipitation precipitation = 6;</code>
+     */
+    com.cmpe275.lab1.User.PrecipitationOrBuilder getPrecipitationOrBuilder();
+  }
+  /**
+   * Protobuf type {@code AllData}
+   */
+  public  static final class AllData extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:AllData)
+      AllDataOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use AllData.newBuilder() to construct.
+    private AllData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private AllData() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private AllData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              com.cmpe275.lab1.User.StationData.Builder subBuilder = null;
+              if (stationData_ != null) {
+                subBuilder = stationData_.toBuilder();
+              }
+              stationData_ = input.readMessage(com.cmpe275.lab1.User.StationData.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(stationData_);
+                stationData_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              com.cmpe275.lab1.User.LocationData.Builder subBuilder = null;
+              if (locationData_ != null) {
+                subBuilder = locationData_.toBuilder();
+              }
+              locationData_ = input.readMessage(com.cmpe275.lab1.User.LocationData.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(locationData_);
+                locationData_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 26: {
+              com.cmpe275.lab1.User.Time.Builder subBuilder = null;
+              if (time_ != null) {
+                subBuilder = time_.toBuilder();
+              }
+              time_ = input.readMessage(com.cmpe275.lab1.User.Time.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(time_);
+                time_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 34: {
+              com.cmpe275.lab1.User.Weather.Builder subBuilder = null;
+              if (weather_ != null) {
+                subBuilder = weather_.toBuilder();
+              }
+              weather_ = input.readMessage(com.cmpe275.lab1.User.Weather.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(weather_);
+                weather_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 42: {
+              com.cmpe275.lab1.User.Wind.Builder subBuilder = null;
+              if (wind_ != null) {
+                subBuilder = wind_.toBuilder();
+              }
+              wind_ = input.readMessage(com.cmpe275.lab1.User.Wind.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(wind_);
+                wind_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 50: {
+              com.cmpe275.lab1.User.Precipitation.Builder subBuilder = null;
+              if (precipitation_ != null) {
+                subBuilder = precipitation_.toBuilder();
+              }
+              precipitation_ = input.readMessage(com.cmpe275.lab1.User.Precipitation.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(precipitation_);
+                precipitation_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.cmpe275.lab1.User.internal_static_AllData_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.cmpe275.lab1.User.internal_static_AllData_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.cmpe275.lab1.User.AllData.class, com.cmpe275.lab1.User.AllData.Builder.class);
+    }
+
+    public static final int STATIONDATA_FIELD_NUMBER = 1;
+    private com.cmpe275.lab1.User.StationData stationData_;
+    /**
+     * <code>.StationData stationData = 1;</code>
+     */
+    public boolean hasStationData() {
+      return stationData_ != null;
+    }
+    /**
+     * <code>.StationData stationData = 1;</code>
+     */
+    public com.cmpe275.lab1.User.StationData getStationData() {
+      return stationData_ == null ? com.cmpe275.lab1.User.StationData.getDefaultInstance() : stationData_;
+    }
+    /**
+     * <code>.StationData stationData = 1;</code>
+     */
+    public com.cmpe275.lab1.User.StationDataOrBuilder getStationDataOrBuilder() {
+      return getStationData();
+    }
+
+    public static final int LOCATIONDATA_FIELD_NUMBER = 2;
+    private com.cmpe275.lab1.User.LocationData locationData_;
+    /**
+     * <code>.LocationData locationData = 2;</code>
+     */
+    public boolean hasLocationData() {
+      return locationData_ != null;
+    }
+    /**
+     * <code>.LocationData locationData = 2;</code>
+     */
+    public com.cmpe275.lab1.User.LocationData getLocationData() {
+      return locationData_ == null ? com.cmpe275.lab1.User.LocationData.getDefaultInstance() : locationData_;
+    }
+    /**
+     * <code>.LocationData locationData = 2;</code>
+     */
+    public com.cmpe275.lab1.User.LocationDataOrBuilder getLocationDataOrBuilder() {
+      return getLocationData();
+    }
+
+    public static final int TIME_FIELD_NUMBER = 3;
+    private com.cmpe275.lab1.User.Time time_;
+    /**
+     * <code>.Time time = 3;</code>
+     */
+    public boolean hasTime() {
+      return time_ != null;
+    }
+    /**
+     * <code>.Time time = 3;</code>
+     */
+    public com.cmpe275.lab1.User.Time getTime() {
+      return time_ == null ? com.cmpe275.lab1.User.Time.getDefaultInstance() : time_;
+    }
+    /**
+     * <code>.Time time = 3;</code>
+     */
+    public com.cmpe275.lab1.User.TimeOrBuilder getTimeOrBuilder() {
+      return getTime();
+    }
+
+    public static final int WEATHER_FIELD_NUMBER = 4;
+    private com.cmpe275.lab1.User.Weather weather_;
+    /**
+     * <code>.Weather weather = 4;</code>
+     */
+    public boolean hasWeather() {
+      return weather_ != null;
+    }
+    /**
+     * <code>.Weather weather = 4;</code>
+     */
+    public com.cmpe275.lab1.User.Weather getWeather() {
+      return weather_ == null ? com.cmpe275.lab1.User.Weather.getDefaultInstance() : weather_;
+    }
+    /**
+     * <code>.Weather weather = 4;</code>
+     */
+    public com.cmpe275.lab1.User.WeatherOrBuilder getWeatherOrBuilder() {
+      return getWeather();
+    }
+
+    public static final int WIND_FIELD_NUMBER = 5;
+    private com.cmpe275.lab1.User.Wind wind_;
+    /**
+     * <code>.Wind wind = 5;</code>
+     */
+    public boolean hasWind() {
+      return wind_ != null;
+    }
+    /**
+     * <code>.Wind wind = 5;</code>
+     */
+    public com.cmpe275.lab1.User.Wind getWind() {
+      return wind_ == null ? com.cmpe275.lab1.User.Wind.getDefaultInstance() : wind_;
+    }
+    /**
+     * <code>.Wind wind = 5;</code>
+     */
+    public com.cmpe275.lab1.User.WindOrBuilder getWindOrBuilder() {
+      return getWind();
+    }
+
+    public static final int PRECIPITATION_FIELD_NUMBER = 6;
+    private com.cmpe275.lab1.User.Precipitation precipitation_;
+    /**
+     * <code>.Precipitation precipitation = 6;</code>
+     */
+    public boolean hasPrecipitation() {
+      return precipitation_ != null;
+    }
+    /**
+     * <code>.Precipitation precipitation = 6;</code>
+     */
+    public com.cmpe275.lab1.User.Precipitation getPrecipitation() {
+      return precipitation_ == null ? com.cmpe275.lab1.User.Precipitation.getDefaultInstance() : precipitation_;
+    }
+    /**
+     * <code>.Precipitation precipitation = 6;</code>
+     */
+    public com.cmpe275.lab1.User.PrecipitationOrBuilder getPrecipitationOrBuilder() {
+      return getPrecipitation();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (stationData_ != null) {
+        output.writeMessage(1, getStationData());
+      }
+      if (locationData_ != null) {
+        output.writeMessage(2, getLocationData());
+      }
+      if (time_ != null) {
+        output.writeMessage(3, getTime());
+      }
+      if (weather_ != null) {
+        output.writeMessage(4, getWeather());
+      }
+      if (wind_ != null) {
+        output.writeMessage(5, getWind());
+      }
+      if (precipitation_ != null) {
+        output.writeMessage(6, getPrecipitation());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (stationData_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getStationData());
+      }
+      if (locationData_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getLocationData());
+      }
+      if (time_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getTime());
+      }
+      if (weather_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, getWeather());
+      }
+      if (wind_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getWind());
+      }
+      if (precipitation_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, getPrecipitation());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.cmpe275.lab1.User.AllData)) {
+        return super.equals(obj);
+      }
+      com.cmpe275.lab1.User.AllData other = (com.cmpe275.lab1.User.AllData) obj;
+
+      boolean result = true;
+      result = result && (hasStationData() == other.hasStationData());
+      if (hasStationData()) {
+        result = result && getStationData()
+            .equals(other.getStationData());
+      }
+      result = result && (hasLocationData() == other.hasLocationData());
+      if (hasLocationData()) {
+        result = result && getLocationData()
+            .equals(other.getLocationData());
+      }
+      result = result && (hasTime() == other.hasTime());
+      if (hasTime()) {
+        result = result && getTime()
+            .equals(other.getTime());
+      }
+      result = result && (hasWeather() == other.hasWeather());
+      if (hasWeather()) {
+        result = result && getWeather()
+            .equals(other.getWeather());
+      }
+      result = result && (hasWind() == other.hasWind());
+      if (hasWind()) {
+        result = result && getWind()
+            .equals(other.getWind());
+      }
+      result = result && (hasPrecipitation() == other.hasPrecipitation());
+      if (hasPrecipitation()) {
+        result = result && getPrecipitation()
+            .equals(other.getPrecipitation());
+      }
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasStationData()) {
+        hash = (37 * hash) + STATIONDATA_FIELD_NUMBER;
+        hash = (53 * hash) + getStationData().hashCode();
+      }
+      if (hasLocationData()) {
+        hash = (37 * hash) + LOCATIONDATA_FIELD_NUMBER;
+        hash = (53 * hash) + getLocationData().hashCode();
+      }
+      if (hasTime()) {
+        hash = (37 * hash) + TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getTime().hashCode();
+      }
+      if (hasWeather()) {
+        hash = (37 * hash) + WEATHER_FIELD_NUMBER;
+        hash = (53 * hash) + getWeather().hashCode();
+      }
+      if (hasWind()) {
+        hash = (37 * hash) + WIND_FIELD_NUMBER;
+        hash = (53 * hash) + getWind().hashCode();
+      }
+      if (hasPrecipitation()) {
+        hash = (37 * hash) + PRECIPITATION_FIELD_NUMBER;
+        hash = (53 * hash) + getPrecipitation().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.cmpe275.lab1.User.AllData parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.cmpe275.lab1.User.AllData parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.AllData parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.cmpe275.lab1.User.AllData parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.AllData parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.cmpe275.lab1.User.AllData parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.AllData parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.cmpe275.lab1.User.AllData parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.AllData parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.cmpe275.lab1.User.AllData parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.AllData parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.cmpe275.lab1.User.AllData parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.cmpe275.lab1.User.AllData prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code AllData}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:AllData)
+        com.cmpe275.lab1.User.AllDataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.cmpe275.lab1.User.internal_static_AllData_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.cmpe275.lab1.User.internal_static_AllData_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.cmpe275.lab1.User.AllData.class, com.cmpe275.lab1.User.AllData.Builder.class);
+      }
+
+      // Construct using com.cmpe275.lab1.User.AllData.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (stationDataBuilder_ == null) {
+          stationData_ = null;
+        } else {
+          stationData_ = null;
+          stationDataBuilder_ = null;
+        }
+        if (locationDataBuilder_ == null) {
+          locationData_ = null;
+        } else {
+          locationData_ = null;
+          locationDataBuilder_ = null;
+        }
+        if (timeBuilder_ == null) {
+          time_ = null;
+        } else {
+          time_ = null;
+          timeBuilder_ = null;
+        }
+        if (weatherBuilder_ == null) {
+          weather_ = null;
+        } else {
+          weather_ = null;
+          weatherBuilder_ = null;
+        }
+        if (windBuilder_ == null) {
+          wind_ = null;
+        } else {
+          wind_ = null;
+          windBuilder_ = null;
+        }
+        if (precipitationBuilder_ == null) {
+          precipitation_ = null;
+        } else {
+          precipitation_ = null;
+          precipitationBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.cmpe275.lab1.User.internal_static_AllData_descriptor;
+      }
+
+      @java.lang.Override
+      public com.cmpe275.lab1.User.AllData getDefaultInstanceForType() {
+        return com.cmpe275.lab1.User.AllData.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.cmpe275.lab1.User.AllData build() {
+        com.cmpe275.lab1.User.AllData result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.cmpe275.lab1.User.AllData buildPartial() {
+        com.cmpe275.lab1.User.AllData result = new com.cmpe275.lab1.User.AllData(this);
+        if (stationDataBuilder_ == null) {
+          result.stationData_ = stationData_;
+        } else {
+          result.stationData_ = stationDataBuilder_.build();
+        }
+        if (locationDataBuilder_ == null) {
+          result.locationData_ = locationData_;
+        } else {
+          result.locationData_ = locationDataBuilder_.build();
+        }
+        if (timeBuilder_ == null) {
+          result.time_ = time_;
+        } else {
+          result.time_ = timeBuilder_.build();
+        }
+        if (weatherBuilder_ == null) {
+          result.weather_ = weather_;
+        } else {
+          result.weather_ = weatherBuilder_.build();
+        }
+        if (windBuilder_ == null) {
+          result.wind_ = wind_;
+        } else {
+          result.wind_ = windBuilder_.build();
+        }
+        if (precipitationBuilder_ == null) {
+          result.precipitation_ = precipitation_;
+        } else {
+          result.precipitation_ = precipitationBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.cmpe275.lab1.User.AllData) {
+          return mergeFrom((com.cmpe275.lab1.User.AllData)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.cmpe275.lab1.User.AllData other) {
+        if (other == com.cmpe275.lab1.User.AllData.getDefaultInstance()) return this;
+        if (other.hasStationData()) {
+          mergeStationData(other.getStationData());
+        }
+        if (other.hasLocationData()) {
+          mergeLocationData(other.getLocationData());
+        }
+        if (other.hasTime()) {
+          mergeTime(other.getTime());
+        }
+        if (other.hasWeather()) {
+          mergeWeather(other.getWeather());
+        }
+        if (other.hasWind()) {
+          mergeWind(other.getWind());
+        }
+        if (other.hasPrecipitation()) {
+          mergePrecipitation(other.getPrecipitation());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.cmpe275.lab1.User.AllData parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.cmpe275.lab1.User.AllData) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private com.cmpe275.lab1.User.StationData stationData_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.cmpe275.lab1.User.StationData, com.cmpe275.lab1.User.StationData.Builder, com.cmpe275.lab1.User.StationDataOrBuilder> stationDataBuilder_;
+      /**
+       * <code>.StationData stationData = 1;</code>
+       */
+      public boolean hasStationData() {
+        return stationDataBuilder_ != null || stationData_ != null;
+      }
+      /**
+       * <code>.StationData stationData = 1;</code>
+       */
+      public com.cmpe275.lab1.User.StationData getStationData() {
+        if (stationDataBuilder_ == null) {
+          return stationData_ == null ? com.cmpe275.lab1.User.StationData.getDefaultInstance() : stationData_;
+        } else {
+          return stationDataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.StationData stationData = 1;</code>
+       */
+      public Builder setStationData(com.cmpe275.lab1.User.StationData value) {
+        if (stationDataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          stationData_ = value;
+          onChanged();
+        } else {
+          stationDataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.StationData stationData = 1;</code>
+       */
+      public Builder setStationData(
+          com.cmpe275.lab1.User.StationData.Builder builderForValue) {
+        if (stationDataBuilder_ == null) {
+          stationData_ = builderForValue.build();
+          onChanged();
+        } else {
+          stationDataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.StationData stationData = 1;</code>
+       */
+      public Builder mergeStationData(com.cmpe275.lab1.User.StationData value) {
+        if (stationDataBuilder_ == null) {
+          if (stationData_ != null) {
+            stationData_ =
+              com.cmpe275.lab1.User.StationData.newBuilder(stationData_).mergeFrom(value).buildPartial();
+          } else {
+            stationData_ = value;
+          }
+          onChanged();
+        } else {
+          stationDataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.StationData stationData = 1;</code>
+       */
+      public Builder clearStationData() {
+        if (stationDataBuilder_ == null) {
+          stationData_ = null;
+          onChanged();
+        } else {
+          stationData_ = null;
+          stationDataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.StationData stationData = 1;</code>
+       */
+      public com.cmpe275.lab1.User.StationData.Builder getStationDataBuilder() {
+        
+        onChanged();
+        return getStationDataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.StationData stationData = 1;</code>
+       */
+      public com.cmpe275.lab1.User.StationDataOrBuilder getStationDataOrBuilder() {
+        if (stationDataBuilder_ != null) {
+          return stationDataBuilder_.getMessageOrBuilder();
+        } else {
+          return stationData_ == null ?
+              com.cmpe275.lab1.User.StationData.getDefaultInstance() : stationData_;
+        }
+      }
+      /**
+       * <code>.StationData stationData = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.cmpe275.lab1.User.StationData, com.cmpe275.lab1.User.StationData.Builder, com.cmpe275.lab1.User.StationDataOrBuilder> 
+          getStationDataFieldBuilder() {
+        if (stationDataBuilder_ == null) {
+          stationDataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.cmpe275.lab1.User.StationData, com.cmpe275.lab1.User.StationData.Builder, com.cmpe275.lab1.User.StationDataOrBuilder>(
+                  getStationData(),
+                  getParentForChildren(),
+                  isClean());
+          stationData_ = null;
+        }
+        return stationDataBuilder_;
+      }
+
+      private com.cmpe275.lab1.User.LocationData locationData_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.cmpe275.lab1.User.LocationData, com.cmpe275.lab1.User.LocationData.Builder, com.cmpe275.lab1.User.LocationDataOrBuilder> locationDataBuilder_;
+      /**
+       * <code>.LocationData locationData = 2;</code>
+       */
+      public boolean hasLocationData() {
+        return locationDataBuilder_ != null || locationData_ != null;
+      }
+      /**
+       * <code>.LocationData locationData = 2;</code>
+       */
+      public com.cmpe275.lab1.User.LocationData getLocationData() {
+        if (locationDataBuilder_ == null) {
+          return locationData_ == null ? com.cmpe275.lab1.User.LocationData.getDefaultInstance() : locationData_;
+        } else {
+          return locationDataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.LocationData locationData = 2;</code>
+       */
+      public Builder setLocationData(com.cmpe275.lab1.User.LocationData value) {
+        if (locationDataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          locationData_ = value;
+          onChanged();
+        } else {
+          locationDataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.LocationData locationData = 2;</code>
+       */
+      public Builder setLocationData(
+          com.cmpe275.lab1.User.LocationData.Builder builderForValue) {
+        if (locationDataBuilder_ == null) {
+          locationData_ = builderForValue.build();
+          onChanged();
+        } else {
+          locationDataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.LocationData locationData = 2;</code>
+       */
+      public Builder mergeLocationData(com.cmpe275.lab1.User.LocationData value) {
+        if (locationDataBuilder_ == null) {
+          if (locationData_ != null) {
+            locationData_ =
+              com.cmpe275.lab1.User.LocationData.newBuilder(locationData_).mergeFrom(value).buildPartial();
+          } else {
+            locationData_ = value;
+          }
+          onChanged();
+        } else {
+          locationDataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.LocationData locationData = 2;</code>
+       */
+      public Builder clearLocationData() {
+        if (locationDataBuilder_ == null) {
+          locationData_ = null;
+          onChanged();
+        } else {
+          locationData_ = null;
+          locationDataBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.LocationData locationData = 2;</code>
+       */
+      public com.cmpe275.lab1.User.LocationData.Builder getLocationDataBuilder() {
+        
+        onChanged();
+        return getLocationDataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.LocationData locationData = 2;</code>
+       */
+      public com.cmpe275.lab1.User.LocationDataOrBuilder getLocationDataOrBuilder() {
+        if (locationDataBuilder_ != null) {
+          return locationDataBuilder_.getMessageOrBuilder();
+        } else {
+          return locationData_ == null ?
+              com.cmpe275.lab1.User.LocationData.getDefaultInstance() : locationData_;
+        }
+      }
+      /**
+       * <code>.LocationData locationData = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.cmpe275.lab1.User.LocationData, com.cmpe275.lab1.User.LocationData.Builder, com.cmpe275.lab1.User.LocationDataOrBuilder> 
+          getLocationDataFieldBuilder() {
+        if (locationDataBuilder_ == null) {
+          locationDataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.cmpe275.lab1.User.LocationData, com.cmpe275.lab1.User.LocationData.Builder, com.cmpe275.lab1.User.LocationDataOrBuilder>(
+                  getLocationData(),
+                  getParentForChildren(),
+                  isClean());
+          locationData_ = null;
+        }
+        return locationDataBuilder_;
+      }
+
+      private com.cmpe275.lab1.User.Time time_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.cmpe275.lab1.User.Time, com.cmpe275.lab1.User.Time.Builder, com.cmpe275.lab1.User.TimeOrBuilder> timeBuilder_;
+      /**
+       * <code>.Time time = 3;</code>
+       */
+      public boolean hasTime() {
+        return timeBuilder_ != null || time_ != null;
+      }
+      /**
+       * <code>.Time time = 3;</code>
+       */
+      public com.cmpe275.lab1.User.Time getTime() {
+        if (timeBuilder_ == null) {
+          return time_ == null ? com.cmpe275.lab1.User.Time.getDefaultInstance() : time_;
+        } else {
+          return timeBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.Time time = 3;</code>
+       */
+      public Builder setTime(com.cmpe275.lab1.User.Time value) {
+        if (timeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          time_ = value;
+          onChanged();
+        } else {
+          timeBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Time time = 3;</code>
+       */
+      public Builder setTime(
+          com.cmpe275.lab1.User.Time.Builder builderForValue) {
+        if (timeBuilder_ == null) {
+          time_ = builderForValue.build();
+          onChanged();
+        } else {
+          timeBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Time time = 3;</code>
+       */
+      public Builder mergeTime(com.cmpe275.lab1.User.Time value) {
+        if (timeBuilder_ == null) {
+          if (time_ != null) {
+            time_ =
+              com.cmpe275.lab1.User.Time.newBuilder(time_).mergeFrom(value).buildPartial();
+          } else {
+            time_ = value;
+          }
+          onChanged();
+        } else {
+          timeBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Time time = 3;</code>
+       */
+      public Builder clearTime() {
+        if (timeBuilder_ == null) {
+          time_ = null;
+          onChanged();
+        } else {
+          time_ = null;
+          timeBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Time time = 3;</code>
+       */
+      public com.cmpe275.lab1.User.Time.Builder getTimeBuilder() {
+        
+        onChanged();
+        return getTimeFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.Time time = 3;</code>
+       */
+      public com.cmpe275.lab1.User.TimeOrBuilder getTimeOrBuilder() {
+        if (timeBuilder_ != null) {
+          return timeBuilder_.getMessageOrBuilder();
+        } else {
+          return time_ == null ?
+              com.cmpe275.lab1.User.Time.getDefaultInstance() : time_;
+        }
+      }
+      /**
+       * <code>.Time time = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.cmpe275.lab1.User.Time, com.cmpe275.lab1.User.Time.Builder, com.cmpe275.lab1.User.TimeOrBuilder> 
+          getTimeFieldBuilder() {
+        if (timeBuilder_ == null) {
+          timeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.cmpe275.lab1.User.Time, com.cmpe275.lab1.User.Time.Builder, com.cmpe275.lab1.User.TimeOrBuilder>(
+                  getTime(),
+                  getParentForChildren(),
+                  isClean());
+          time_ = null;
+        }
+        return timeBuilder_;
+      }
+
+      private com.cmpe275.lab1.User.Weather weather_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.cmpe275.lab1.User.Weather, com.cmpe275.lab1.User.Weather.Builder, com.cmpe275.lab1.User.WeatherOrBuilder> weatherBuilder_;
+      /**
+       * <code>.Weather weather = 4;</code>
+       */
+      public boolean hasWeather() {
+        return weatherBuilder_ != null || weather_ != null;
+      }
+      /**
+       * <code>.Weather weather = 4;</code>
+       */
+      public com.cmpe275.lab1.User.Weather getWeather() {
+        if (weatherBuilder_ == null) {
+          return weather_ == null ? com.cmpe275.lab1.User.Weather.getDefaultInstance() : weather_;
+        } else {
+          return weatherBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.Weather weather = 4;</code>
+       */
+      public Builder setWeather(com.cmpe275.lab1.User.Weather value) {
+        if (weatherBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          weather_ = value;
+          onChanged();
+        } else {
+          weatherBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Weather weather = 4;</code>
+       */
+      public Builder setWeather(
+          com.cmpe275.lab1.User.Weather.Builder builderForValue) {
+        if (weatherBuilder_ == null) {
+          weather_ = builderForValue.build();
+          onChanged();
+        } else {
+          weatherBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Weather weather = 4;</code>
+       */
+      public Builder mergeWeather(com.cmpe275.lab1.User.Weather value) {
+        if (weatherBuilder_ == null) {
+          if (weather_ != null) {
+            weather_ =
+              com.cmpe275.lab1.User.Weather.newBuilder(weather_).mergeFrom(value).buildPartial();
+          } else {
+            weather_ = value;
+          }
+          onChanged();
+        } else {
+          weatherBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Weather weather = 4;</code>
+       */
+      public Builder clearWeather() {
+        if (weatherBuilder_ == null) {
+          weather_ = null;
+          onChanged();
+        } else {
+          weather_ = null;
+          weatherBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Weather weather = 4;</code>
+       */
+      public com.cmpe275.lab1.User.Weather.Builder getWeatherBuilder() {
+        
+        onChanged();
+        return getWeatherFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.Weather weather = 4;</code>
+       */
+      public com.cmpe275.lab1.User.WeatherOrBuilder getWeatherOrBuilder() {
+        if (weatherBuilder_ != null) {
+          return weatherBuilder_.getMessageOrBuilder();
+        } else {
+          return weather_ == null ?
+              com.cmpe275.lab1.User.Weather.getDefaultInstance() : weather_;
+        }
+      }
+      /**
+       * <code>.Weather weather = 4;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.cmpe275.lab1.User.Weather, com.cmpe275.lab1.User.Weather.Builder, com.cmpe275.lab1.User.WeatherOrBuilder> 
+          getWeatherFieldBuilder() {
+        if (weatherBuilder_ == null) {
+          weatherBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.cmpe275.lab1.User.Weather, com.cmpe275.lab1.User.Weather.Builder, com.cmpe275.lab1.User.WeatherOrBuilder>(
+                  getWeather(),
+                  getParentForChildren(),
+                  isClean());
+          weather_ = null;
+        }
+        return weatherBuilder_;
+      }
+
+      private com.cmpe275.lab1.User.Wind wind_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.cmpe275.lab1.User.Wind, com.cmpe275.lab1.User.Wind.Builder, com.cmpe275.lab1.User.WindOrBuilder> windBuilder_;
+      /**
+       * <code>.Wind wind = 5;</code>
+       */
+      public boolean hasWind() {
+        return windBuilder_ != null || wind_ != null;
+      }
+      /**
+       * <code>.Wind wind = 5;</code>
+       */
+      public com.cmpe275.lab1.User.Wind getWind() {
+        if (windBuilder_ == null) {
+          return wind_ == null ? com.cmpe275.lab1.User.Wind.getDefaultInstance() : wind_;
+        } else {
+          return windBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.Wind wind = 5;</code>
+       */
+      public Builder setWind(com.cmpe275.lab1.User.Wind value) {
+        if (windBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          wind_ = value;
+          onChanged();
+        } else {
+          windBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Wind wind = 5;</code>
+       */
+      public Builder setWind(
+          com.cmpe275.lab1.User.Wind.Builder builderForValue) {
+        if (windBuilder_ == null) {
+          wind_ = builderForValue.build();
+          onChanged();
+        } else {
+          windBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Wind wind = 5;</code>
+       */
+      public Builder mergeWind(com.cmpe275.lab1.User.Wind value) {
+        if (windBuilder_ == null) {
+          if (wind_ != null) {
+            wind_ =
+              com.cmpe275.lab1.User.Wind.newBuilder(wind_).mergeFrom(value).buildPartial();
+          } else {
+            wind_ = value;
+          }
+          onChanged();
+        } else {
+          windBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Wind wind = 5;</code>
+       */
+      public Builder clearWind() {
+        if (windBuilder_ == null) {
+          wind_ = null;
+          onChanged();
+        } else {
+          wind_ = null;
+          windBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Wind wind = 5;</code>
+       */
+      public com.cmpe275.lab1.User.Wind.Builder getWindBuilder() {
+        
+        onChanged();
+        return getWindFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.Wind wind = 5;</code>
+       */
+      public com.cmpe275.lab1.User.WindOrBuilder getWindOrBuilder() {
+        if (windBuilder_ != null) {
+          return windBuilder_.getMessageOrBuilder();
+        } else {
+          return wind_ == null ?
+              com.cmpe275.lab1.User.Wind.getDefaultInstance() : wind_;
+        }
+      }
+      /**
+       * <code>.Wind wind = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.cmpe275.lab1.User.Wind, com.cmpe275.lab1.User.Wind.Builder, com.cmpe275.lab1.User.WindOrBuilder> 
+          getWindFieldBuilder() {
+        if (windBuilder_ == null) {
+          windBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.cmpe275.lab1.User.Wind, com.cmpe275.lab1.User.Wind.Builder, com.cmpe275.lab1.User.WindOrBuilder>(
+                  getWind(),
+                  getParentForChildren(),
+                  isClean());
+          wind_ = null;
+        }
+        return windBuilder_;
+      }
+
+      private com.cmpe275.lab1.User.Precipitation precipitation_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.cmpe275.lab1.User.Precipitation, com.cmpe275.lab1.User.Precipitation.Builder, com.cmpe275.lab1.User.PrecipitationOrBuilder> precipitationBuilder_;
+      /**
+       * <code>.Precipitation precipitation = 6;</code>
+       */
+      public boolean hasPrecipitation() {
+        return precipitationBuilder_ != null || precipitation_ != null;
+      }
+      /**
+       * <code>.Precipitation precipitation = 6;</code>
+       */
+      public com.cmpe275.lab1.User.Precipitation getPrecipitation() {
+        if (precipitationBuilder_ == null) {
+          return precipitation_ == null ? com.cmpe275.lab1.User.Precipitation.getDefaultInstance() : precipitation_;
+        } else {
+          return precipitationBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.Precipitation precipitation = 6;</code>
+       */
+      public Builder setPrecipitation(com.cmpe275.lab1.User.Precipitation value) {
+        if (precipitationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          precipitation_ = value;
+          onChanged();
+        } else {
+          precipitationBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Precipitation precipitation = 6;</code>
+       */
+      public Builder setPrecipitation(
+          com.cmpe275.lab1.User.Precipitation.Builder builderForValue) {
+        if (precipitationBuilder_ == null) {
+          precipitation_ = builderForValue.build();
+          onChanged();
+        } else {
+          precipitationBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Precipitation precipitation = 6;</code>
+       */
+      public Builder mergePrecipitation(com.cmpe275.lab1.User.Precipitation value) {
+        if (precipitationBuilder_ == null) {
+          if (precipitation_ != null) {
+            precipitation_ =
+              com.cmpe275.lab1.User.Precipitation.newBuilder(precipitation_).mergeFrom(value).buildPartial();
+          } else {
+            precipitation_ = value;
+          }
+          onChanged();
+        } else {
+          precipitationBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Precipitation precipitation = 6;</code>
+       */
+      public Builder clearPrecipitation() {
+        if (precipitationBuilder_ == null) {
+          precipitation_ = null;
+          onChanged();
+        } else {
+          precipitation_ = null;
+          precipitationBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.Precipitation precipitation = 6;</code>
+       */
+      public com.cmpe275.lab1.User.Precipitation.Builder getPrecipitationBuilder() {
+        
+        onChanged();
+        return getPrecipitationFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.Precipitation precipitation = 6;</code>
+       */
+      public com.cmpe275.lab1.User.PrecipitationOrBuilder getPrecipitationOrBuilder() {
+        if (precipitationBuilder_ != null) {
+          return precipitationBuilder_.getMessageOrBuilder();
+        } else {
+          return precipitation_ == null ?
+              com.cmpe275.lab1.User.Precipitation.getDefaultInstance() : precipitation_;
+        }
+      }
+      /**
+       * <code>.Precipitation precipitation = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.cmpe275.lab1.User.Precipitation, com.cmpe275.lab1.User.Precipitation.Builder, com.cmpe275.lab1.User.PrecipitationOrBuilder> 
+          getPrecipitationFieldBuilder() {
+        if (precipitationBuilder_ == null) {
+          precipitationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.cmpe275.lab1.User.Precipitation, com.cmpe275.lab1.User.Precipitation.Builder, com.cmpe275.lab1.User.PrecipitationOrBuilder>(
+                  getPrecipitation(),
+                  getParentForChildren(),
+                  isClean());
+          precipitation_ = null;
+        }
+        return precipitationBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:AllData)
+    }
+
+    // @@protoc_insertion_point(class_scope:AllData)
+    private static final com.cmpe275.lab1.User.AllData DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.cmpe275.lab1.User.AllData();
+    }
+
+    public static com.cmpe275.lab1.User.AllData getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AllData>
+        PARSER = new com.google.protobuf.AbstractParser<AllData>() {
+      @java.lang.Override
+      public AllData parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new AllData(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AllData> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AllData> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.cmpe275.lab1.User.AllData getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface StationDataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:StationData)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string stationID = 1;</code>
+     */
+    java.lang.String getStationID();
+    /**
+     * <code>string stationID = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getStationIDBytes();
+
+    /**
+     * <code>string stationName = 2;</code>
+     */
+    java.lang.String getStationName();
+    /**
+     * <code>string stationName = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getStationNameBytes();
+
+    /**
+     * <code>string stationType = 3;</code>
+     */
+    java.lang.String getStationType();
+    /**
+     * <code>string stationType = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getStationTypeBytes();
+  }
+  /**
+   * Protobuf type {@code StationData}
+   */
+  public  static final class StationData extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:StationData)
+      StationDataOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use StationData.newBuilder() to construct.
+    private StationData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private StationData() {
+      stationID_ = "";
+      stationName_ = "";
+      stationType_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private StationData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              stationID_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              stationName_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              stationType_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.cmpe275.lab1.User.internal_static_StationData_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.cmpe275.lab1.User.internal_static_StationData_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.cmpe275.lab1.User.StationData.class, com.cmpe275.lab1.User.StationData.Builder.class);
+    }
+
+    public static final int STATIONID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object stationID_;
+    /**
+     * <code>string stationID = 1;</code>
+     */
+    public java.lang.String getStationID() {
+      java.lang.Object ref = stationID_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        stationID_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string stationID = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getStationIDBytes() {
+      java.lang.Object ref = stationID_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        stationID_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STATIONNAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object stationName_;
+    /**
+     * <code>string stationName = 2;</code>
+     */
+    public java.lang.String getStationName() {
+      java.lang.Object ref = stationName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        stationName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string stationName = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getStationNameBytes() {
+      java.lang.Object ref = stationName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        stationName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STATIONTYPE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object stationType_;
+    /**
+     * <code>string stationType = 3;</code>
+     */
+    public java.lang.String getStationType() {
+      java.lang.Object ref = stationType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        stationType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string stationType = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getStationTypeBytes() {
+      java.lang.Object ref = stationType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        stationType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getStationIDBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, stationID_);
+      }
+      if (!getStationNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, stationName_);
+      }
+      if (!getStationTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, stationType_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getStationIDBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, stationID_);
+      }
+      if (!getStationNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, stationName_);
+      }
+      if (!getStationTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, stationType_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.cmpe275.lab1.User.StationData)) {
+        return super.equals(obj);
+      }
+      com.cmpe275.lab1.User.StationData other = (com.cmpe275.lab1.User.StationData) obj;
+
+      boolean result = true;
+      result = result && getStationID()
+          .equals(other.getStationID());
+      result = result && getStationName()
+          .equals(other.getStationName());
+      result = result && getStationType()
+          .equals(other.getStationType());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + STATIONID_FIELD_NUMBER;
+      hash = (53 * hash) + getStationID().hashCode();
+      hash = (37 * hash) + STATIONNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getStationName().hashCode();
+      hash = (37 * hash) + STATIONTYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getStationType().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.cmpe275.lab1.User.StationData parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.cmpe275.lab1.User.StationData parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.StationData parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.cmpe275.lab1.User.StationData parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.StationData parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.cmpe275.lab1.User.StationData parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.StationData parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.cmpe275.lab1.User.StationData parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.StationData parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.cmpe275.lab1.User.StationData parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.StationData parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.cmpe275.lab1.User.StationData parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.cmpe275.lab1.User.StationData prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code StationData}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:StationData)
+        com.cmpe275.lab1.User.StationDataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.cmpe275.lab1.User.internal_static_StationData_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.cmpe275.lab1.User.internal_static_StationData_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.cmpe275.lab1.User.StationData.class, com.cmpe275.lab1.User.StationData.Builder.class);
+      }
+
+      // Construct using com.cmpe275.lab1.User.StationData.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        stationID_ = "";
+
+        stationName_ = "";
+
+        stationType_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.cmpe275.lab1.User.internal_static_StationData_descriptor;
+      }
+
+      @java.lang.Override
+      public com.cmpe275.lab1.User.StationData getDefaultInstanceForType() {
+        return com.cmpe275.lab1.User.StationData.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.cmpe275.lab1.User.StationData build() {
+        com.cmpe275.lab1.User.StationData result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.cmpe275.lab1.User.StationData buildPartial() {
+        com.cmpe275.lab1.User.StationData result = new com.cmpe275.lab1.User.StationData(this);
+        result.stationID_ = stationID_;
+        result.stationName_ = stationName_;
+        result.stationType_ = stationType_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.cmpe275.lab1.User.StationData) {
+          return mergeFrom((com.cmpe275.lab1.User.StationData)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.cmpe275.lab1.User.StationData other) {
+        if (other == com.cmpe275.lab1.User.StationData.getDefaultInstance()) return this;
+        if (!other.getStationID().isEmpty()) {
+          stationID_ = other.stationID_;
+          onChanged();
+        }
+        if (!other.getStationName().isEmpty()) {
+          stationName_ = other.stationName_;
+          onChanged();
+        }
+        if (!other.getStationType().isEmpty()) {
+          stationType_ = other.stationType_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.cmpe275.lab1.User.StationData parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.cmpe275.lab1.User.StationData) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object stationID_ = "";
+      /**
+       * <code>string stationID = 1;</code>
+       */
+      public java.lang.String getStationID() {
+        java.lang.Object ref = stationID_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          stationID_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string stationID = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getStationIDBytes() {
+        java.lang.Object ref = stationID_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          stationID_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string stationID = 1;</code>
+       */
+      public Builder setStationID(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        stationID_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string stationID = 1;</code>
+       */
+      public Builder clearStationID() {
+        
+        stationID_ = getDefaultInstance().getStationID();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string stationID = 1;</code>
+       */
+      public Builder setStationIDBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        stationID_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object stationName_ = "";
+      /**
+       * <code>string stationName = 2;</code>
+       */
+      public java.lang.String getStationName() {
+        java.lang.Object ref = stationName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          stationName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string stationName = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getStationNameBytes() {
+        java.lang.Object ref = stationName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          stationName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string stationName = 2;</code>
+       */
+      public Builder setStationName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        stationName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string stationName = 2;</code>
+       */
+      public Builder clearStationName() {
+        
+        stationName_ = getDefaultInstance().getStationName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string stationName = 2;</code>
+       */
+      public Builder setStationNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        stationName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object stationType_ = "";
+      /**
+       * <code>string stationType = 3;</code>
+       */
+      public java.lang.String getStationType() {
+        java.lang.Object ref = stationType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          stationType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string stationType = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getStationTypeBytes() {
+        java.lang.Object ref = stationType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          stationType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string stationType = 3;</code>
+       */
+      public Builder setStationType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        stationType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string stationType = 3;</code>
+       */
+      public Builder clearStationType() {
+        
+        stationType_ = getDefaultInstance().getStationType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string stationType = 3;</code>
+       */
+      public Builder setStationTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        stationType_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:StationData)
+    }
+
+    // @@protoc_insertion_point(class_scope:StationData)
+    private static final com.cmpe275.lab1.User.StationData DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.cmpe275.lab1.User.StationData();
+    }
+
+    public static com.cmpe275.lab1.User.StationData getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<StationData>
+        PARSER = new com.google.protobuf.AbstractParser<StationData>() {
+      @java.lang.Override
+      public StationData parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new StationData(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<StationData> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<StationData> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.cmpe275.lab1.User.StationData getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface LocationDataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:LocationData)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string locationName = 1;</code>
+     */
+    java.lang.String getLocationName();
+    /**
+     * <code>string locationName = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getLocationNameBytes();
+
+    /**
+     * <code>float latitude = 2;</code>
+     */
+    float getLatitude();
+
+    /**
+     * <code>float longitude = 3;</code>
+     */
+    float getLongitude();
+
+    /**
+     * <code>double elevation = 4;</code>
+     */
+    double getElevation();
+  }
+  /**
+   * Protobuf type {@code LocationData}
+   */
+  public  static final class LocationData extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:LocationData)
+      LocationDataOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use LocationData.newBuilder() to construct.
+    private LocationData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private LocationData() {
+      locationName_ = "";
+      latitude_ = 0F;
+      longitude_ = 0F;
+      elevation_ = 0D;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private LocationData(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              locationName_ = s;
+              break;
+            }
+            case 21: {
+
+              latitude_ = input.readFloat();
+              break;
+            }
+            case 29: {
+
+              longitude_ = input.readFloat();
+              break;
+            }
+            case 33: {
+
+              elevation_ = input.readDouble();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.cmpe275.lab1.User.internal_static_LocationData_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.cmpe275.lab1.User.internal_static_LocationData_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.cmpe275.lab1.User.LocationData.class, com.cmpe275.lab1.User.LocationData.Builder.class);
+    }
+
+    public static final int LOCATIONNAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object locationName_;
+    /**
+     * <code>string locationName = 1;</code>
+     */
+    public java.lang.String getLocationName() {
+      java.lang.Object ref = locationName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        locationName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string locationName = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getLocationNameBytes() {
+      java.lang.Object ref = locationName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        locationName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LATITUDE_FIELD_NUMBER = 2;
+    private float latitude_;
+    /**
+     * <code>float latitude = 2;</code>
+     */
+    public float getLatitude() {
+      return latitude_;
+    }
+
+    public static final int LONGITUDE_FIELD_NUMBER = 3;
+    private float longitude_;
+    /**
+     * <code>float longitude = 3;</code>
+     */
+    public float getLongitude() {
+      return longitude_;
+    }
+
+    public static final int ELEVATION_FIELD_NUMBER = 4;
+    private double elevation_;
+    /**
+     * <code>double elevation = 4;</code>
+     */
+    public double getElevation() {
+      return elevation_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getLocationNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, locationName_);
+      }
+      if (latitude_ != 0F) {
+        output.writeFloat(2, latitude_);
+      }
+      if (longitude_ != 0F) {
+        output.writeFloat(3, longitude_);
+      }
+      if (elevation_ != 0D) {
+        output.writeDouble(4, elevation_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getLocationNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, locationName_);
+      }
+      if (latitude_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(2, latitude_);
+      }
+      if (longitude_ != 0F) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(3, longitude_);
+      }
+      if (elevation_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(4, elevation_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.cmpe275.lab1.User.LocationData)) {
+        return super.equals(obj);
+      }
+      com.cmpe275.lab1.User.LocationData other = (com.cmpe275.lab1.User.LocationData) obj;
+
+      boolean result = true;
+      result = result && getLocationName()
+          .equals(other.getLocationName());
+      result = result && (
+          java.lang.Float.floatToIntBits(getLatitude())
+          == java.lang.Float.floatToIntBits(
+              other.getLatitude()));
+      result = result && (
+          java.lang.Float.floatToIntBits(getLongitude())
+          == java.lang.Float.floatToIntBits(
+              other.getLongitude()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getElevation())
+          == java.lang.Double.doubleToLongBits(
+              other.getElevation()));
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + LOCATIONNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getLocationName().hashCode();
+      hash = (37 * hash) + LATITUDE_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getLatitude());
+      hash = (37 * hash) + LONGITUDE_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getLongitude());
+      hash = (37 * hash) + ELEVATION_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getElevation()));
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.cmpe275.lab1.User.LocationData parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.cmpe275.lab1.User.LocationData parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.LocationData parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.cmpe275.lab1.User.LocationData parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.LocationData parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.cmpe275.lab1.User.LocationData parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.LocationData parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.cmpe275.lab1.User.LocationData parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.LocationData parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.cmpe275.lab1.User.LocationData parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.LocationData parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.cmpe275.lab1.User.LocationData parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.cmpe275.lab1.User.LocationData prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code LocationData}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:LocationData)
+        com.cmpe275.lab1.User.LocationDataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.cmpe275.lab1.User.internal_static_LocationData_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.cmpe275.lab1.User.internal_static_LocationData_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.cmpe275.lab1.User.LocationData.class, com.cmpe275.lab1.User.LocationData.Builder.class);
+      }
+
+      // Construct using com.cmpe275.lab1.User.LocationData.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        locationName_ = "";
+
+        latitude_ = 0F;
+
+        longitude_ = 0F;
+
+        elevation_ = 0D;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.cmpe275.lab1.User.internal_static_LocationData_descriptor;
+      }
+
+      @java.lang.Override
+      public com.cmpe275.lab1.User.LocationData getDefaultInstanceForType() {
+        return com.cmpe275.lab1.User.LocationData.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.cmpe275.lab1.User.LocationData build() {
+        com.cmpe275.lab1.User.LocationData result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.cmpe275.lab1.User.LocationData buildPartial() {
+        com.cmpe275.lab1.User.LocationData result = new com.cmpe275.lab1.User.LocationData(this);
+        result.locationName_ = locationName_;
+        result.latitude_ = latitude_;
+        result.longitude_ = longitude_;
+        result.elevation_ = elevation_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.cmpe275.lab1.User.LocationData) {
+          return mergeFrom((com.cmpe275.lab1.User.LocationData)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.cmpe275.lab1.User.LocationData other) {
+        if (other == com.cmpe275.lab1.User.LocationData.getDefaultInstance()) return this;
+        if (!other.getLocationName().isEmpty()) {
+          locationName_ = other.locationName_;
+          onChanged();
+        }
+        if (other.getLatitude() != 0F) {
+          setLatitude(other.getLatitude());
+        }
+        if (other.getLongitude() != 0F) {
+          setLongitude(other.getLongitude());
+        }
+        if (other.getElevation() != 0D) {
+          setElevation(other.getElevation());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.cmpe275.lab1.User.LocationData parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.cmpe275.lab1.User.LocationData) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object locationName_ = "";
+      /**
+       * <code>string locationName = 1;</code>
+       */
+      public java.lang.String getLocationName() {
+        java.lang.Object ref = locationName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          locationName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string locationName = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getLocationNameBytes() {
+        java.lang.Object ref = locationName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          locationName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string locationName = 1;</code>
+       */
+      public Builder setLocationName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        locationName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string locationName = 1;</code>
+       */
+      public Builder clearLocationName() {
+        
+        locationName_ = getDefaultInstance().getLocationName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string locationName = 1;</code>
+       */
+      public Builder setLocationNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        locationName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private float latitude_ ;
+      /**
+       * <code>float latitude = 2;</code>
+       */
+      public float getLatitude() {
+        return latitude_;
+      }
+      /**
+       * <code>float latitude = 2;</code>
+       */
+      public Builder setLatitude(float value) {
+        
+        latitude_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>float latitude = 2;</code>
+       */
+      public Builder clearLatitude() {
+        
+        latitude_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private float longitude_ ;
+      /**
+       * <code>float longitude = 3;</code>
+       */
+      public float getLongitude() {
+        return longitude_;
+      }
+      /**
+       * <code>float longitude = 3;</code>
+       */
+      public Builder setLongitude(float value) {
+        
+        longitude_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>float longitude = 3;</code>
+       */
+      public Builder clearLongitude() {
+        
+        longitude_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private double elevation_ ;
+      /**
+       * <code>double elevation = 4;</code>
+       */
+      public double getElevation() {
+        return elevation_;
+      }
+      /**
+       * <code>double elevation = 4;</code>
+       */
+      public Builder setElevation(double value) {
+        
+        elevation_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double elevation = 4;</code>
+       */
+      public Builder clearElevation() {
+        
+        elevation_ = 0D;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:LocationData)
+    }
+
+    // @@protoc_insertion_point(class_scope:LocationData)
+    private static final com.cmpe275.lab1.User.LocationData DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.cmpe275.lab1.User.LocationData();
+    }
+
+    public static com.cmpe275.lab1.User.LocationData getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<LocationData>
+        PARSER = new com.google.protobuf.AbstractParser<LocationData>() {
+      @java.lang.Override
+      public LocationData parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new LocationData(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<LocationData> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LocationData> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.cmpe275.lab1.User.LocationData getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TimeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Time)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>double timeObs = 1;</code>
+     */
+    double getTimeObs();
+
+    /**
+     * <code>double timeReport = 2;</code>
+     */
+    double getTimeReport();
+
+    /**
+     * <code>double timeReceived = 3;</code>
+     */
+    double getTimeReceived();
+  }
+  /**
+   * Protobuf type {@code Time}
+   */
+  public  static final class Time extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:Time)
+      TimeOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Time.newBuilder() to construct.
+    private Time(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Time() {
+      timeObs_ = 0D;
+      timeReport_ = 0D;
+      timeReceived_ = 0D;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Time(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 9: {
+
+              timeObs_ = input.readDouble();
+              break;
+            }
+            case 17: {
+
+              timeReport_ = input.readDouble();
+              break;
+            }
+            case 25: {
+
+              timeReceived_ = input.readDouble();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.cmpe275.lab1.User.internal_static_Time_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.cmpe275.lab1.User.internal_static_Time_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.cmpe275.lab1.User.Time.class, com.cmpe275.lab1.User.Time.Builder.class);
+    }
+
+    public static final int TIMEOBS_FIELD_NUMBER = 1;
+    private double timeObs_;
+    /**
+     * <code>double timeObs = 1;</code>
+     */
+    public double getTimeObs() {
+      return timeObs_;
+    }
+
+    public static final int TIMEREPORT_FIELD_NUMBER = 2;
+    private double timeReport_;
+    /**
+     * <code>double timeReport = 2;</code>
+     */
+    public double getTimeReport() {
+      return timeReport_;
+    }
+
+    public static final int TIMERECEIVED_FIELD_NUMBER = 3;
+    private double timeReceived_;
+    /**
+     * <code>double timeReceived = 3;</code>
+     */
+    public double getTimeReceived() {
+      return timeReceived_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (timeObs_ != 0D) {
+        output.writeDouble(1, timeObs_);
+      }
+      if (timeReport_ != 0D) {
+        output.writeDouble(2, timeReport_);
+      }
+      if (timeReceived_ != 0D) {
+        output.writeDouble(3, timeReceived_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (timeObs_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(1, timeObs_);
+      }
+      if (timeReport_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(2, timeReport_);
+      }
+      if (timeReceived_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(3, timeReceived_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.cmpe275.lab1.User.Time)) {
+        return super.equals(obj);
+      }
+      com.cmpe275.lab1.User.Time other = (com.cmpe275.lab1.User.Time) obj;
+
+      boolean result = true;
+      result = result && (
+          java.lang.Double.doubleToLongBits(getTimeObs())
+          == java.lang.Double.doubleToLongBits(
+              other.getTimeObs()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getTimeReport())
+          == java.lang.Double.doubleToLongBits(
+              other.getTimeReport()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getTimeReceived())
+          == java.lang.Double.doubleToLongBits(
+              other.getTimeReceived()));
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TIMEOBS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getTimeObs()));
+      hash = (37 * hash) + TIMEREPORT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getTimeReport()));
+      hash = (37 * hash) + TIMERECEIVED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getTimeReceived()));
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.cmpe275.lab1.User.Time parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.cmpe275.lab1.User.Time parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.Time parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.cmpe275.lab1.User.Time parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.Time parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.cmpe275.lab1.User.Time parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.Time parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.cmpe275.lab1.User.Time parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.Time parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.cmpe275.lab1.User.Time parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.Time parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.cmpe275.lab1.User.Time parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.cmpe275.lab1.User.Time prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code Time}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:Time)
+        com.cmpe275.lab1.User.TimeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.cmpe275.lab1.User.internal_static_Time_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.cmpe275.lab1.User.internal_static_Time_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.cmpe275.lab1.User.Time.class, com.cmpe275.lab1.User.Time.Builder.class);
+      }
+
+      // Construct using com.cmpe275.lab1.User.Time.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        timeObs_ = 0D;
+
+        timeReport_ = 0D;
+
+        timeReceived_ = 0D;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.cmpe275.lab1.User.internal_static_Time_descriptor;
+      }
+
+      @java.lang.Override
+      public com.cmpe275.lab1.User.Time getDefaultInstanceForType() {
+        return com.cmpe275.lab1.User.Time.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.cmpe275.lab1.User.Time build() {
+        com.cmpe275.lab1.User.Time result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.cmpe275.lab1.User.Time buildPartial() {
+        com.cmpe275.lab1.User.Time result = new com.cmpe275.lab1.User.Time(this);
+        result.timeObs_ = timeObs_;
+        result.timeReport_ = timeReport_;
+        result.timeReceived_ = timeReceived_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.cmpe275.lab1.User.Time) {
+          return mergeFrom((com.cmpe275.lab1.User.Time)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.cmpe275.lab1.User.Time other) {
+        if (other == com.cmpe275.lab1.User.Time.getDefaultInstance()) return this;
+        if (other.getTimeObs() != 0D) {
+          setTimeObs(other.getTimeObs());
+        }
+        if (other.getTimeReport() != 0D) {
+          setTimeReport(other.getTimeReport());
+        }
+        if (other.getTimeReceived() != 0D) {
+          setTimeReceived(other.getTimeReceived());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.cmpe275.lab1.User.Time parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.cmpe275.lab1.User.Time) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private double timeObs_ ;
+      /**
+       * <code>double timeObs = 1;</code>
+       */
+      public double getTimeObs() {
+        return timeObs_;
+      }
+      /**
+       * <code>double timeObs = 1;</code>
+       */
+      public Builder setTimeObs(double value) {
+        
+        timeObs_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double timeObs = 1;</code>
+       */
+      public Builder clearTimeObs() {
+        
+        timeObs_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double timeReport_ ;
+      /**
+       * <code>double timeReport = 2;</code>
+       */
+      public double getTimeReport() {
+        return timeReport_;
+      }
+      /**
+       * <code>double timeReport = 2;</code>
+       */
+      public Builder setTimeReport(double value) {
+        
+        timeReport_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double timeReport = 2;</code>
+       */
+      public Builder clearTimeReport() {
+        
+        timeReport_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double timeReceived_ ;
+      /**
+       * <code>double timeReceived = 3;</code>
+       */
+      public double getTimeReceived() {
+        return timeReceived_;
+      }
+      /**
+       * <code>double timeReceived = 3;</code>
+       */
+      public Builder setTimeReceived(double value) {
+        
+        timeReceived_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double timeReceived = 3;</code>
+       */
+      public Builder clearTimeReceived() {
+        
+        timeReceived_ = 0D;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:Time)
+    }
+
+    // @@protoc_insertion_point(class_scope:Time)
+    private static final com.cmpe275.lab1.User.Time DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.cmpe275.lab1.User.Time();
+    }
+
+    public static com.cmpe275.lab1.User.Time getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Time>
+        PARSER = new com.google.protobuf.AbstractParser<Time>() {
+      @java.lang.Override
+      public Time parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Time(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Time> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Time> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.cmpe275.lab1.User.Time getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface WeatherOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Weather)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>double temperature = 1;</code>
+     */
+    double getTemperature();
+
+    /**
+     * <code>string temperatureQC = 2;</code>
+     */
+    java.lang.String getTemperatureQC();
+    /**
+     * <code>string temperatureQC = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getTemperatureQCBytes();
+
+    /**
+     * <code>double dewpoint = 3;</code>
+     */
+    double getDewpoint();
+
+    /**
+     * <code>double relHumidity = 4;</code>
+     */
+    double getRelHumidity();
+
+    /**
+     * <code>double stationPressure = 5;</code>
+     */
+    double getStationPressure();
+
+    /**
+     * <code>double seaLevelPress = 6;</code>
+     */
+    double getSeaLevelPress();
+
+    /**
+     * <code>double altimeter = 7;</code>
+     */
+    double getAltimeter();
+  }
+  /**
+   * Protobuf type {@code Weather}
+   */
+  public  static final class Weather extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:Weather)
+      WeatherOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Weather.newBuilder() to construct.
+    private Weather(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Weather() {
+      temperature_ = 0D;
+      temperatureQC_ = "";
+      dewpoint_ = 0D;
+      relHumidity_ = 0D;
+      stationPressure_ = 0D;
+      seaLevelPress_ = 0D;
+      altimeter_ = 0D;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Weather(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 9: {
+
+              temperature_ = input.readDouble();
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              temperatureQC_ = s;
+              break;
+            }
+            case 25: {
+
+              dewpoint_ = input.readDouble();
+              break;
+            }
+            case 33: {
+
+              relHumidity_ = input.readDouble();
+              break;
+            }
+            case 41: {
+
+              stationPressure_ = input.readDouble();
+              break;
+            }
+            case 49: {
+
+              seaLevelPress_ = input.readDouble();
+              break;
+            }
+            case 57: {
+
+              altimeter_ = input.readDouble();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.cmpe275.lab1.User.internal_static_Weather_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.cmpe275.lab1.User.internal_static_Weather_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.cmpe275.lab1.User.Weather.class, com.cmpe275.lab1.User.Weather.Builder.class);
+    }
+
+    public static final int TEMPERATURE_FIELD_NUMBER = 1;
+    private double temperature_;
+    /**
+     * <code>double temperature = 1;</code>
+     */
+    public double getTemperature() {
+      return temperature_;
+    }
+
+    public static final int TEMPERATUREQC_FIELD_NUMBER = 2;
+    private volatile java.lang.Object temperatureQC_;
+    /**
+     * <code>string temperatureQC = 2;</code>
+     */
+    public java.lang.String getTemperatureQC() {
+      java.lang.Object ref = temperatureQC_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        temperatureQC_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string temperatureQC = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTemperatureQCBytes() {
+      java.lang.Object ref = temperatureQC_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        temperatureQC_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DEWPOINT_FIELD_NUMBER = 3;
+    private double dewpoint_;
+    /**
+     * <code>double dewpoint = 3;</code>
+     */
+    public double getDewpoint() {
+      return dewpoint_;
+    }
+
+    public static final int RELHUMIDITY_FIELD_NUMBER = 4;
+    private double relHumidity_;
+    /**
+     * <code>double relHumidity = 4;</code>
+     */
+    public double getRelHumidity() {
+      return relHumidity_;
+    }
+
+    public static final int STATIONPRESSURE_FIELD_NUMBER = 5;
+    private double stationPressure_;
+    /**
+     * <code>double stationPressure = 5;</code>
+     */
+    public double getStationPressure() {
+      return stationPressure_;
+    }
+
+    public static final int SEALEVELPRESS_FIELD_NUMBER = 6;
+    private double seaLevelPress_;
+    /**
+     * <code>double seaLevelPress = 6;</code>
+     */
+    public double getSeaLevelPress() {
+      return seaLevelPress_;
+    }
+
+    public static final int ALTIMETER_FIELD_NUMBER = 7;
+    private double altimeter_;
+    /**
+     * <code>double altimeter = 7;</code>
+     */
+    public double getAltimeter() {
+      return altimeter_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (temperature_ != 0D) {
+        output.writeDouble(1, temperature_);
+      }
+      if (!getTemperatureQCBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, temperatureQC_);
+      }
+      if (dewpoint_ != 0D) {
+        output.writeDouble(3, dewpoint_);
+      }
+      if (relHumidity_ != 0D) {
+        output.writeDouble(4, relHumidity_);
+      }
+      if (stationPressure_ != 0D) {
+        output.writeDouble(5, stationPressure_);
+      }
+      if (seaLevelPress_ != 0D) {
+        output.writeDouble(6, seaLevelPress_);
+      }
+      if (altimeter_ != 0D) {
+        output.writeDouble(7, altimeter_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (temperature_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(1, temperature_);
+      }
+      if (!getTemperatureQCBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, temperatureQC_);
+      }
+      if (dewpoint_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(3, dewpoint_);
+      }
+      if (relHumidity_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(4, relHumidity_);
+      }
+      if (stationPressure_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(5, stationPressure_);
+      }
+      if (seaLevelPress_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(6, seaLevelPress_);
+      }
+      if (altimeter_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(7, altimeter_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.cmpe275.lab1.User.Weather)) {
+        return super.equals(obj);
+      }
+      com.cmpe275.lab1.User.Weather other = (com.cmpe275.lab1.User.Weather) obj;
+
+      boolean result = true;
+      result = result && (
+          java.lang.Double.doubleToLongBits(getTemperature())
+          == java.lang.Double.doubleToLongBits(
+              other.getTemperature()));
+      result = result && getTemperatureQC()
+          .equals(other.getTemperatureQC());
+      result = result && (
+          java.lang.Double.doubleToLongBits(getDewpoint())
+          == java.lang.Double.doubleToLongBits(
+              other.getDewpoint()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getRelHumidity())
+          == java.lang.Double.doubleToLongBits(
+              other.getRelHumidity()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getStationPressure())
+          == java.lang.Double.doubleToLongBits(
+              other.getStationPressure()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getSeaLevelPress())
+          == java.lang.Double.doubleToLongBits(
+              other.getSeaLevelPress()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getAltimeter())
+          == java.lang.Double.doubleToLongBits(
+              other.getAltimeter()));
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TEMPERATURE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getTemperature()));
+      hash = (37 * hash) + TEMPERATUREQC_FIELD_NUMBER;
+      hash = (53 * hash) + getTemperatureQC().hashCode();
+      hash = (37 * hash) + DEWPOINT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getDewpoint()));
+      hash = (37 * hash) + RELHUMIDITY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getRelHumidity()));
+      hash = (37 * hash) + STATIONPRESSURE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getStationPressure()));
+      hash = (37 * hash) + SEALEVELPRESS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getSeaLevelPress()));
+      hash = (37 * hash) + ALTIMETER_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getAltimeter()));
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.cmpe275.lab1.User.Weather parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.cmpe275.lab1.User.Weather parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.Weather parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.cmpe275.lab1.User.Weather parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.Weather parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.cmpe275.lab1.User.Weather parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.Weather parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.cmpe275.lab1.User.Weather parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.Weather parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.cmpe275.lab1.User.Weather parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.Weather parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.cmpe275.lab1.User.Weather parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.cmpe275.lab1.User.Weather prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code Weather}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:Weather)
+        com.cmpe275.lab1.User.WeatherOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.cmpe275.lab1.User.internal_static_Weather_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.cmpe275.lab1.User.internal_static_Weather_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.cmpe275.lab1.User.Weather.class, com.cmpe275.lab1.User.Weather.Builder.class);
+      }
+
+      // Construct using com.cmpe275.lab1.User.Weather.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        temperature_ = 0D;
+
+        temperatureQC_ = "";
+
+        dewpoint_ = 0D;
+
+        relHumidity_ = 0D;
+
+        stationPressure_ = 0D;
+
+        seaLevelPress_ = 0D;
+
+        altimeter_ = 0D;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.cmpe275.lab1.User.internal_static_Weather_descriptor;
+      }
+
+      @java.lang.Override
+      public com.cmpe275.lab1.User.Weather getDefaultInstanceForType() {
+        return com.cmpe275.lab1.User.Weather.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.cmpe275.lab1.User.Weather build() {
+        com.cmpe275.lab1.User.Weather result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.cmpe275.lab1.User.Weather buildPartial() {
+        com.cmpe275.lab1.User.Weather result = new com.cmpe275.lab1.User.Weather(this);
+        result.temperature_ = temperature_;
+        result.temperatureQC_ = temperatureQC_;
+        result.dewpoint_ = dewpoint_;
+        result.relHumidity_ = relHumidity_;
+        result.stationPressure_ = stationPressure_;
+        result.seaLevelPress_ = seaLevelPress_;
+        result.altimeter_ = altimeter_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.cmpe275.lab1.User.Weather) {
+          return mergeFrom((com.cmpe275.lab1.User.Weather)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.cmpe275.lab1.User.Weather other) {
+        if (other == com.cmpe275.lab1.User.Weather.getDefaultInstance()) return this;
+        if (other.getTemperature() != 0D) {
+          setTemperature(other.getTemperature());
+        }
+        if (!other.getTemperatureQC().isEmpty()) {
+          temperatureQC_ = other.temperatureQC_;
+          onChanged();
+        }
+        if (other.getDewpoint() != 0D) {
+          setDewpoint(other.getDewpoint());
+        }
+        if (other.getRelHumidity() != 0D) {
+          setRelHumidity(other.getRelHumidity());
+        }
+        if (other.getStationPressure() != 0D) {
+          setStationPressure(other.getStationPressure());
+        }
+        if (other.getSeaLevelPress() != 0D) {
+          setSeaLevelPress(other.getSeaLevelPress());
+        }
+        if (other.getAltimeter() != 0D) {
+          setAltimeter(other.getAltimeter());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.cmpe275.lab1.User.Weather parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.cmpe275.lab1.User.Weather) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private double temperature_ ;
+      /**
+       * <code>double temperature = 1;</code>
+       */
+      public double getTemperature() {
+        return temperature_;
+      }
+      /**
+       * <code>double temperature = 1;</code>
+       */
+      public Builder setTemperature(double value) {
+        
+        temperature_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double temperature = 1;</code>
+       */
+      public Builder clearTemperature() {
+        
+        temperature_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object temperatureQC_ = "";
+      /**
+       * <code>string temperatureQC = 2;</code>
+       */
+      public java.lang.String getTemperatureQC() {
+        java.lang.Object ref = temperatureQC_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          temperatureQC_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string temperatureQC = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTemperatureQCBytes() {
+        java.lang.Object ref = temperatureQC_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          temperatureQC_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string temperatureQC = 2;</code>
+       */
+      public Builder setTemperatureQC(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        temperatureQC_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string temperatureQC = 2;</code>
+       */
+      public Builder clearTemperatureQC() {
+        
+        temperatureQC_ = getDefaultInstance().getTemperatureQC();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string temperatureQC = 2;</code>
+       */
+      public Builder setTemperatureQCBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        temperatureQC_ = value;
+        onChanged();
+        return this;
+      }
+
+      private double dewpoint_ ;
+      /**
+       * <code>double dewpoint = 3;</code>
+       */
+      public double getDewpoint() {
+        return dewpoint_;
+      }
+      /**
+       * <code>double dewpoint = 3;</code>
+       */
+      public Builder setDewpoint(double value) {
+        
+        dewpoint_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double dewpoint = 3;</code>
+       */
+      public Builder clearDewpoint() {
+        
+        dewpoint_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double relHumidity_ ;
+      /**
+       * <code>double relHumidity = 4;</code>
+       */
+      public double getRelHumidity() {
+        return relHumidity_;
+      }
+      /**
+       * <code>double relHumidity = 4;</code>
+       */
+      public Builder setRelHumidity(double value) {
+        
+        relHumidity_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double relHumidity = 4;</code>
+       */
+      public Builder clearRelHumidity() {
+        
+        relHumidity_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double stationPressure_ ;
+      /**
+       * <code>double stationPressure = 5;</code>
+       */
+      public double getStationPressure() {
+        return stationPressure_;
+      }
+      /**
+       * <code>double stationPressure = 5;</code>
+       */
+      public Builder setStationPressure(double value) {
+        
+        stationPressure_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double stationPressure = 5;</code>
+       */
+      public Builder clearStationPressure() {
+        
+        stationPressure_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double seaLevelPress_ ;
+      /**
+       * <code>double seaLevelPress = 6;</code>
+       */
+      public double getSeaLevelPress() {
+        return seaLevelPress_;
+      }
+      /**
+       * <code>double seaLevelPress = 6;</code>
+       */
+      public Builder setSeaLevelPress(double value) {
+        
+        seaLevelPress_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double seaLevelPress = 6;</code>
+       */
+      public Builder clearSeaLevelPress() {
+        
+        seaLevelPress_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double altimeter_ ;
+      /**
+       * <code>double altimeter = 7;</code>
+       */
+      public double getAltimeter() {
+        return altimeter_;
+      }
+      /**
+       * <code>double altimeter = 7;</code>
+       */
+      public Builder setAltimeter(double value) {
+        
+        altimeter_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double altimeter = 7;</code>
+       */
+      public Builder clearAltimeter() {
+        
+        altimeter_ = 0D;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:Weather)
+    }
+
+    // @@protoc_insertion_point(class_scope:Weather)
+    private static final com.cmpe275.lab1.User.Weather DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.cmpe275.lab1.User.Weather();
+    }
+
+    public static com.cmpe275.lab1.User.Weather getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Weather>
+        PARSER = new com.google.protobuf.AbstractParser<Weather>() {
+      @java.lang.Override
+      public Weather parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Weather(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Weather> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Weather> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.cmpe275.lab1.User.Weather getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface WindOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Wind)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>double windDir = 1;</code>
+     */
+    double getWindDir();
+
+    /**
+     * <code>double windSpeed = 2;</code>
+     */
+    double getWindSpeed();
+
+    /**
+     * <code>string windSpeedQC = 3;</code>
+     */
+    java.lang.String getWindSpeedQC();
+    /**
+     * <code>string windSpeedQC = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getWindSpeedQCBytes();
+
+    /**
+     * <code>double windGust = 4;</code>
+     */
+    double getWindGust();
+  }
+  /**
+   * Protobuf type {@code Wind}
+   */
+  public  static final class Wind extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:Wind)
+      WindOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Wind.newBuilder() to construct.
+    private Wind(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Wind() {
+      windDir_ = 0D;
+      windSpeed_ = 0D;
+      windSpeedQC_ = "";
+      windGust_ = 0D;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Wind(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 9: {
+
+              windDir_ = input.readDouble();
+              break;
+            }
+            case 17: {
+
+              windSpeed_ = input.readDouble();
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              windSpeedQC_ = s;
+              break;
+            }
+            case 33: {
+
+              windGust_ = input.readDouble();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.cmpe275.lab1.User.internal_static_Wind_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.cmpe275.lab1.User.internal_static_Wind_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.cmpe275.lab1.User.Wind.class, com.cmpe275.lab1.User.Wind.Builder.class);
+    }
+
+    public static final int WINDDIR_FIELD_NUMBER = 1;
+    private double windDir_;
+    /**
+     * <code>double windDir = 1;</code>
+     */
+    public double getWindDir() {
+      return windDir_;
+    }
+
+    public static final int WINDSPEED_FIELD_NUMBER = 2;
+    private double windSpeed_;
+    /**
+     * <code>double windSpeed = 2;</code>
+     */
+    public double getWindSpeed() {
+      return windSpeed_;
+    }
+
+    public static final int WINDSPEEDQC_FIELD_NUMBER = 3;
+    private volatile java.lang.Object windSpeedQC_;
+    /**
+     * <code>string windSpeedQC = 3;</code>
+     */
+    public java.lang.String getWindSpeedQC() {
+      java.lang.Object ref = windSpeedQC_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        windSpeedQC_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string windSpeedQC = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getWindSpeedQCBytes() {
+      java.lang.Object ref = windSpeedQC_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        windSpeedQC_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int WINDGUST_FIELD_NUMBER = 4;
+    private double windGust_;
+    /**
+     * <code>double windGust = 4;</code>
+     */
+    public double getWindGust() {
+      return windGust_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (windDir_ != 0D) {
+        output.writeDouble(1, windDir_);
+      }
+      if (windSpeed_ != 0D) {
+        output.writeDouble(2, windSpeed_);
+      }
+      if (!getWindSpeedQCBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, windSpeedQC_);
+      }
+      if (windGust_ != 0D) {
+        output.writeDouble(4, windGust_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (windDir_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(1, windDir_);
+      }
+      if (windSpeed_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(2, windSpeed_);
+      }
+      if (!getWindSpeedQCBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, windSpeedQC_);
+      }
+      if (windGust_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(4, windGust_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.cmpe275.lab1.User.Wind)) {
+        return super.equals(obj);
+      }
+      com.cmpe275.lab1.User.Wind other = (com.cmpe275.lab1.User.Wind) obj;
+
+      boolean result = true;
+      result = result && (
+          java.lang.Double.doubleToLongBits(getWindDir())
+          == java.lang.Double.doubleToLongBits(
+              other.getWindDir()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getWindSpeed())
+          == java.lang.Double.doubleToLongBits(
+              other.getWindSpeed()));
+      result = result && getWindSpeedQC()
+          .equals(other.getWindSpeedQC());
+      result = result && (
+          java.lang.Double.doubleToLongBits(getWindGust())
+          == java.lang.Double.doubleToLongBits(
+              other.getWindGust()));
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + WINDDIR_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getWindDir()));
+      hash = (37 * hash) + WINDSPEED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getWindSpeed()));
+      hash = (37 * hash) + WINDSPEEDQC_FIELD_NUMBER;
+      hash = (53 * hash) + getWindSpeedQC().hashCode();
+      hash = (37 * hash) + WINDGUST_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getWindGust()));
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.cmpe275.lab1.User.Wind parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.cmpe275.lab1.User.Wind parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.Wind parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.cmpe275.lab1.User.Wind parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.Wind parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.cmpe275.lab1.User.Wind parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.Wind parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.cmpe275.lab1.User.Wind parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.Wind parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.cmpe275.lab1.User.Wind parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.Wind parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.cmpe275.lab1.User.Wind parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.cmpe275.lab1.User.Wind prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code Wind}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:Wind)
+        com.cmpe275.lab1.User.WindOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.cmpe275.lab1.User.internal_static_Wind_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.cmpe275.lab1.User.internal_static_Wind_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.cmpe275.lab1.User.Wind.class, com.cmpe275.lab1.User.Wind.Builder.class);
+      }
+
+      // Construct using com.cmpe275.lab1.User.Wind.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        windDir_ = 0D;
+
+        windSpeed_ = 0D;
+
+        windSpeedQC_ = "";
+
+        windGust_ = 0D;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.cmpe275.lab1.User.internal_static_Wind_descriptor;
+      }
+
+      @java.lang.Override
+      public com.cmpe275.lab1.User.Wind getDefaultInstanceForType() {
+        return com.cmpe275.lab1.User.Wind.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.cmpe275.lab1.User.Wind build() {
+        com.cmpe275.lab1.User.Wind result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.cmpe275.lab1.User.Wind buildPartial() {
+        com.cmpe275.lab1.User.Wind result = new com.cmpe275.lab1.User.Wind(this);
+        result.windDir_ = windDir_;
+        result.windSpeed_ = windSpeed_;
+        result.windSpeedQC_ = windSpeedQC_;
+        result.windGust_ = windGust_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.cmpe275.lab1.User.Wind) {
+          return mergeFrom((com.cmpe275.lab1.User.Wind)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.cmpe275.lab1.User.Wind other) {
+        if (other == com.cmpe275.lab1.User.Wind.getDefaultInstance()) return this;
+        if (other.getWindDir() != 0D) {
+          setWindDir(other.getWindDir());
+        }
+        if (other.getWindSpeed() != 0D) {
+          setWindSpeed(other.getWindSpeed());
+        }
+        if (!other.getWindSpeedQC().isEmpty()) {
+          windSpeedQC_ = other.windSpeedQC_;
+          onChanged();
+        }
+        if (other.getWindGust() != 0D) {
+          setWindGust(other.getWindGust());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.cmpe275.lab1.User.Wind parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.cmpe275.lab1.User.Wind) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private double windDir_ ;
+      /**
+       * <code>double windDir = 1;</code>
+       */
+      public double getWindDir() {
+        return windDir_;
+      }
+      /**
+       * <code>double windDir = 1;</code>
+       */
+      public Builder setWindDir(double value) {
+        
+        windDir_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double windDir = 1;</code>
+       */
+      public Builder clearWindDir() {
+        
+        windDir_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double windSpeed_ ;
+      /**
+       * <code>double windSpeed = 2;</code>
+       */
+      public double getWindSpeed() {
+        return windSpeed_;
+      }
+      /**
+       * <code>double windSpeed = 2;</code>
+       */
+      public Builder setWindSpeed(double value) {
+        
+        windSpeed_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double windSpeed = 2;</code>
+       */
+      public Builder clearWindSpeed() {
+        
+        windSpeed_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object windSpeedQC_ = "";
+      /**
+       * <code>string windSpeedQC = 3;</code>
+       */
+      public java.lang.String getWindSpeedQC() {
+        java.lang.Object ref = windSpeedQC_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          windSpeedQC_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string windSpeedQC = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getWindSpeedQCBytes() {
+        java.lang.Object ref = windSpeedQC_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          windSpeedQC_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string windSpeedQC = 3;</code>
+       */
+      public Builder setWindSpeedQC(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        windSpeedQC_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string windSpeedQC = 3;</code>
+       */
+      public Builder clearWindSpeedQC() {
+        
+        windSpeedQC_ = getDefaultInstance().getWindSpeedQC();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string windSpeedQC = 3;</code>
+       */
+      public Builder setWindSpeedQCBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        windSpeedQC_ = value;
+        onChanged();
+        return this;
+      }
+
+      private double windGust_ ;
+      /**
+       * <code>double windGust = 4;</code>
+       */
+      public double getWindGust() {
+        return windGust_;
+      }
+      /**
+       * <code>double windGust = 4;</code>
+       */
+      public Builder setWindGust(double value) {
+        
+        windGust_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double windGust = 4;</code>
+       */
+      public Builder clearWindGust() {
+        
+        windGust_ = 0D;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:Wind)
+    }
+
+    // @@protoc_insertion_point(class_scope:Wind)
+    private static final com.cmpe275.lab1.User.Wind DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.cmpe275.lab1.User.Wind();
+    }
+
+    public static com.cmpe275.lab1.User.Wind getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Wind>
+        PARSER = new com.google.protobuf.AbstractParser<Wind>() {
+      @java.lang.Override
+      public Wind parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Wind(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Wind> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Wind> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.cmpe275.lab1.User.Wind getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface PrecipitationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:Precipitation)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>double precip = 1;</code>
+     */
+    double getPrecip();
+
+    /**
+     * <code>double precipAccum = 2;</code>
+     */
+    double getPrecipAccum();
+
+    /**
+     * <code>double precipRate = 3;</code>
+     */
+    double getPrecipRate();
+
+    /**
+     * <code>int32 precipIntensity = 4;</code>
+     */
+    int getPrecipIntensity();
+  }
+  /**
+   * Protobuf type {@code Precipitation}
+   */
+  public  static final class Precipitation extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:Precipitation)
+      PrecipitationOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Precipitation.newBuilder() to construct.
+    private Precipitation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Precipitation() {
+      precip_ = 0D;
+      precipAccum_ = 0D;
+      precipRate_ = 0D;
+      precipIntensity_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Precipitation(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 9: {
+
+              precip_ = input.readDouble();
+              break;
+            }
+            case 17: {
+
+              precipAccum_ = input.readDouble();
+              break;
+            }
+            case 25: {
+
+              precipRate_ = input.readDouble();
+              break;
+            }
+            case 32: {
+
+              precipIntensity_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.cmpe275.lab1.User.internal_static_Precipitation_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.cmpe275.lab1.User.internal_static_Precipitation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.cmpe275.lab1.User.Precipitation.class, com.cmpe275.lab1.User.Precipitation.Builder.class);
+    }
+
+    public static final int PRECIP_FIELD_NUMBER = 1;
+    private double precip_;
+    /**
+     * <code>double precip = 1;</code>
+     */
+    public double getPrecip() {
+      return precip_;
+    }
+
+    public static final int PRECIPACCUM_FIELD_NUMBER = 2;
+    private double precipAccum_;
+    /**
+     * <code>double precipAccum = 2;</code>
+     */
+    public double getPrecipAccum() {
+      return precipAccum_;
+    }
+
+    public static final int PRECIPRATE_FIELD_NUMBER = 3;
+    private double precipRate_;
+    /**
+     * <code>double precipRate = 3;</code>
+     */
+    public double getPrecipRate() {
+      return precipRate_;
+    }
+
+    public static final int PRECIPINTENSITY_FIELD_NUMBER = 4;
+    private int precipIntensity_;
+    /**
+     * <code>int32 precipIntensity = 4;</code>
+     */
+    public int getPrecipIntensity() {
+      return precipIntensity_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (precip_ != 0D) {
+        output.writeDouble(1, precip_);
+      }
+      if (precipAccum_ != 0D) {
+        output.writeDouble(2, precipAccum_);
+      }
+      if (precipRate_ != 0D) {
+        output.writeDouble(3, precipRate_);
+      }
+      if (precipIntensity_ != 0) {
+        output.writeInt32(4, precipIntensity_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (precip_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(1, precip_);
+      }
+      if (precipAccum_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(2, precipAccum_);
+      }
+      if (precipRate_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(3, precipRate_);
+      }
+      if (precipIntensity_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, precipIntensity_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.cmpe275.lab1.User.Precipitation)) {
+        return super.equals(obj);
+      }
+      com.cmpe275.lab1.User.Precipitation other = (com.cmpe275.lab1.User.Precipitation) obj;
+
+      boolean result = true;
+      result = result && (
+          java.lang.Double.doubleToLongBits(getPrecip())
+          == java.lang.Double.doubleToLongBits(
+              other.getPrecip()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getPrecipAccum())
+          == java.lang.Double.doubleToLongBits(
+              other.getPrecipAccum()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getPrecipRate())
+          == java.lang.Double.doubleToLongBits(
+              other.getPrecipRate()));
+      result = result && (getPrecipIntensity()
+          == other.getPrecipIntensity());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PRECIP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getPrecip()));
+      hash = (37 * hash) + PRECIPACCUM_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getPrecipAccum()));
+      hash = (37 * hash) + PRECIPRATE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getPrecipRate()));
+      hash = (37 * hash) + PRECIPINTENSITY_FIELD_NUMBER;
+      hash = (53 * hash) + getPrecipIntensity();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.cmpe275.lab1.User.Precipitation parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.cmpe275.lab1.User.Precipitation parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.Precipitation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.cmpe275.lab1.User.Precipitation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.Precipitation parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.cmpe275.lab1.User.Precipitation parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.Precipitation parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.cmpe275.lab1.User.Precipitation parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.Precipitation parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.cmpe275.lab1.User.Precipitation parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.cmpe275.lab1.User.Precipitation parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.cmpe275.lab1.User.Precipitation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.cmpe275.lab1.User.Precipitation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code Precipitation}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:Precipitation)
+        com.cmpe275.lab1.User.PrecipitationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.cmpe275.lab1.User.internal_static_Precipitation_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.cmpe275.lab1.User.internal_static_Precipitation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.cmpe275.lab1.User.Precipitation.class, com.cmpe275.lab1.User.Precipitation.Builder.class);
+      }
+
+      // Construct using com.cmpe275.lab1.User.Precipitation.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        precip_ = 0D;
+
+        precipAccum_ = 0D;
+
+        precipRate_ = 0D;
+
+        precipIntensity_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.cmpe275.lab1.User.internal_static_Precipitation_descriptor;
+      }
+
+      @java.lang.Override
+      public com.cmpe275.lab1.User.Precipitation getDefaultInstanceForType() {
+        return com.cmpe275.lab1.User.Precipitation.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.cmpe275.lab1.User.Precipitation build() {
+        com.cmpe275.lab1.User.Precipitation result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.cmpe275.lab1.User.Precipitation buildPartial() {
+        com.cmpe275.lab1.User.Precipitation result = new com.cmpe275.lab1.User.Precipitation(this);
+        result.precip_ = precip_;
+        result.precipAccum_ = precipAccum_;
+        result.precipRate_ = precipRate_;
+        result.precipIntensity_ = precipIntensity_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.cmpe275.lab1.User.Precipitation) {
+          return mergeFrom((com.cmpe275.lab1.User.Precipitation)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.cmpe275.lab1.User.Precipitation other) {
+        if (other == com.cmpe275.lab1.User.Precipitation.getDefaultInstance()) return this;
+        if (other.getPrecip() != 0D) {
+          setPrecip(other.getPrecip());
+        }
+        if (other.getPrecipAccum() != 0D) {
+          setPrecipAccum(other.getPrecipAccum());
+        }
+        if (other.getPrecipRate() != 0D) {
+          setPrecipRate(other.getPrecipRate());
+        }
+        if (other.getPrecipIntensity() != 0) {
+          setPrecipIntensity(other.getPrecipIntensity());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.cmpe275.lab1.User.Precipitation parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.cmpe275.lab1.User.Precipitation) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private double precip_ ;
+      /**
+       * <code>double precip = 1;</code>
+       */
+      public double getPrecip() {
+        return precip_;
+      }
+      /**
+       * <code>double precip = 1;</code>
+       */
+      public Builder setPrecip(double value) {
+        
+        precip_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double precip = 1;</code>
+       */
+      public Builder clearPrecip() {
+        
+        precip_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double precipAccum_ ;
+      /**
+       * <code>double precipAccum = 2;</code>
+       */
+      public double getPrecipAccum() {
+        return precipAccum_;
+      }
+      /**
+       * <code>double precipAccum = 2;</code>
+       */
+      public Builder setPrecipAccum(double value) {
+        
+        precipAccum_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double precipAccum = 2;</code>
+       */
+      public Builder clearPrecipAccum() {
+        
+        precipAccum_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double precipRate_ ;
+      /**
+       * <code>double precipRate = 3;</code>
+       */
+      public double getPrecipRate() {
+        return precipRate_;
+      }
+      /**
+       * <code>double precipRate = 3;</code>
+       */
+      public Builder setPrecipRate(double value) {
+        
+        precipRate_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double precipRate = 3;</code>
+       */
+      public Builder clearPrecipRate() {
+        
+        precipRate_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private int precipIntensity_ ;
+      /**
+       * <code>int32 precipIntensity = 4;</code>
+       */
+      public int getPrecipIntensity() {
+        return precipIntensity_;
+      }
+      /**
+       * <code>int32 precipIntensity = 4;</code>
+       */
+      public Builder setPrecipIntensity(int value) {
+        
+        precipIntensity_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 precipIntensity = 4;</code>
+       */
+      public Builder clearPrecipIntensity() {
+        
+        precipIntensity_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:Precipitation)
+    }
+
+    // @@protoc_insertion_point(class_scope:Precipitation)
+    private static final com.cmpe275.lab1.User.Precipitation DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.cmpe275.lab1.User.Precipitation();
+    }
+
+    public static com.cmpe275.lab1.User.Precipitation getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Precipitation>
+        PARSER = new com.google.protobuf.AbstractParser<Precipitation>() {
+      @java.lang.Override
+      public Precipitation parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Precipitation(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Precipitation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Precipitation> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.cmpe275.lab1.User.Precipitation getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3333,20 +8711,50 @@ public final class User {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_LoginRequest_descriptor;
+    internal_static_StationRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_LoginRequest_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_APIResponse_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_APIResponse_fieldAccessorTable;
+      internal_static_StationRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_MesonetData_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_MesonetData_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_AllData_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_AllData_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_StationData_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_StationData_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_LocationData_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_LocationData_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Time_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Time_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Weather_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Weather_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Wind_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Wind_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Precipitation_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Precipitation_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_MesonetDataList_descriptor;
   private static final 
@@ -3366,19 +8774,37 @@ public final class User {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\nuser.proto\"2\n\014LoginRequest\022\020\n\010username" +
-      "\030\001 \001(\t\022\020\n\010password\030\002 \001(\t\"<\n\013APIResponse\022" +
-      "\027\n\017responsemessage\030\001 \001(\t\022\024\n\014responseCode" +
-      "\030\002 \001(\005\"J\n\013MesonetData\022\021\n\tstationID\030\001 \001(\t" +
-      "\022\023\n\013stationName\030\002 \001(\t\022\023\n\013stationType\030\003 \001" +
-      "(\t\"4\n\017MesonetDataList\022!\n\013mesonetData\030\001 \003" +
-      "(\0132\014.MesonetData\"\007\n\005Empty2\331\001\n\004user\022$\n\005lo" +
-      "gin\022\r.LoginRequest\032\014.APIResponse\022\036\n\006logo" +
-      "ut\022\006.Empty\032\014.APIResponse\022*\n\016getMesonetDa" +
-      "ta\022\006.Empty\032\020.MesonetDataList\022+\n\017getMeson" +
-      "etData2\022\006.Empty\032\020.MesonetDataList\0222\n\024get" +
-      "MesonetDataStream\022\006.Empty\032\020.MesonetDataL" +
-      "ist0\001B\022\n\020com.cmpe275.lab1b\006proto3"
+      "\n\nuser.proto\"#\n\016StationRequest\022\021\n\tstatio" +
+      "nID\030\001 \001(\t\"J\n\013MesonetData\022\021\n\tstationID\030\001 " +
+      "\001(\t\022\023\n\013stationName\030\002 \001(\t\022\023\n\013stationType\030" +
+      "\003 \001(\t\"\275\001\n\007AllData\022!\n\013stationData\030\001 \001(\0132\014" +
+      ".StationData\022#\n\014locationData\030\002 \001(\0132\r.Loc" +
+      "ationData\022\023\n\004time\030\003 \001(\0132\005.Time\022\031\n\007weathe" +
+      "r\030\004 \001(\0132\010.Weather\022\023\n\004wind\030\005 \001(\0132\005.Wind\022%" +
+      "\n\rprecipitation\030\006 \001(\0132\016.Precipitation\"J\n" +
+      "\013StationData\022\021\n\tstationID\030\001 \001(\t\022\023\n\013stati" +
+      "onName\030\002 \001(\t\022\023\n\013stationType\030\003 \001(\t\"\\\n\014Loc" +
+      "ationData\022\024\n\014locationName\030\001 \001(\t\022\020\n\010latit" +
+      "ude\030\002 \001(\002\022\021\n\tlongitude\030\003 \001(\002\022\021\n\televatio" +
+      "n\030\004 \001(\001\"A\n\004Time\022\017\n\007timeObs\030\001 \001(\001\022\022\n\ntime" +
+      "Report\030\002 \001(\001\022\024\n\014timeReceived\030\003 \001(\001\"\237\001\n\007W" +
+      "eather\022\023\n\013temperature\030\001 \001(\001\022\025\n\rtemperatu" +
+      "reQC\030\002 \001(\t\022\020\n\010dewpoint\030\003 \001(\001\022\023\n\013relHumid" +
+      "ity\030\004 \001(\001\022\027\n\017stationPressure\030\005 \001(\001\022\025\n\rse" +
+      "aLevelPress\030\006 \001(\001\022\021\n\taltimeter\030\007 \001(\001\"Q\n\004" +
+      "Wind\022\017\n\007windDir\030\001 \001(\001\022\021\n\twindSpeed\030\002 \001(\001" +
+      "\022\023\n\013windSpeedQC\030\003 \001(\t\022\020\n\010windGust\030\004 \001(\001\"" +
+      "a\n\rPrecipitation\022\016\n\006precip\030\001 \001(\001\022\023\n\013prec" +
+      "ipAccum\030\002 \001(\001\022\022\n\nprecipRate\030\003 \001(\001\022\027\n\017pre" +
+      "cipIntensity\030\004 \001(\005\"4\n\017MesonetDataList\022!\n" +
+      "\013mesonetData\030\001 \003(\0132\014.MesonetData\"\007\n\005Empt" +
+      "y2\334\001\n\004user\022*\n\016getMesonetData\022\006.Empty\032\020.M" +
+      "esonetDataList\0222\n\024getMesonetDataStream\022\006" +
+      ".Empty\032\020.MesonetDataList0\001\022\036\n\ngetAllData" +
+      "\022\006.Empty\032\010.AllData\022+\n\016getStationData\022\017.S" +
+      "tationRequest\032\010.AllData\022\'\n\ngetWeather\022\017." +
+      "StationRequest\032\010.WeatherB\022\n\020com.cmpe275." +
+      "lab1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -3392,32 +8818,68 @@ public final class User {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_LoginRequest_descriptor =
+    internal_static_StationRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_LoginRequest_fieldAccessorTable = new
+    internal_static_StationRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_LoginRequest_descriptor,
-        new java.lang.String[] { "Username", "Password", });
-    internal_static_APIResponse_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_APIResponse_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_APIResponse_descriptor,
-        new java.lang.String[] { "Responsemessage", "ResponseCode", });
+        internal_static_StationRequest_descriptor,
+        new java.lang.String[] { "StationID", });
     internal_static_MesonetData_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(1);
     internal_static_MesonetData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MesonetData_descriptor,
         new java.lang.String[] { "StationID", "StationName", "StationType", });
-    internal_static_MesonetDataList_descriptor =
+    internal_static_AllData_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_AllData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_AllData_descriptor,
+        new java.lang.String[] { "StationData", "LocationData", "Time", "Weather", "Wind", "Precipitation", });
+    internal_static_StationData_descriptor =
       getDescriptor().getMessageTypes().get(3);
+    internal_static_StationData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_StationData_descriptor,
+        new java.lang.String[] { "StationID", "StationName", "StationType", });
+    internal_static_LocationData_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_LocationData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_LocationData_descriptor,
+        new java.lang.String[] { "LocationName", "Latitude", "Longitude", "Elevation", });
+    internal_static_Time_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_Time_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Time_descriptor,
+        new java.lang.String[] { "TimeObs", "TimeReport", "TimeReceived", });
+    internal_static_Weather_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_Weather_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Weather_descriptor,
+        new java.lang.String[] { "Temperature", "TemperatureQC", "Dewpoint", "RelHumidity", "StationPressure", "SeaLevelPress", "Altimeter", });
+    internal_static_Wind_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_Wind_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Wind_descriptor,
+        new java.lang.String[] { "WindDir", "WindSpeed", "WindSpeedQC", "WindGust", });
+    internal_static_Precipitation_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_Precipitation_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Precipitation_descriptor,
+        new java.lang.String[] { "Precip", "PrecipAccum", "PrecipRate", "PrecipIntensity", });
+    internal_static_MesonetDataList_descriptor =
+      getDescriptor().getMessageTypes().get(9);
     internal_static_MesonetDataList_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_MesonetDataList_descriptor,
         new java.lang.String[] { "MesonetData", });
     internal_static_Empty_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_Empty_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Empty_descriptor,

@@ -3,27 +3,74 @@ syntax = "proto3";
 option java_package = "com.cmpe275.lab1";
 
 service user{
-    rpc login(LoginRequest)  returns (APIResponse);
-    rpc logout(Empty)  returns (APIResponse);
     rpc getMesonetData(Empty) returns (MesonetDataList);
-    rpc getMesonetData2(Empty) returns (MesonetDataList);
     rpc getMesonetDataStream(Empty) returns (stream MesonetDataList);
+    rpc getAllData(Empty) returns (AllData);
+    rpc getStationData(StationRequest) returns (AllData);
+    rpc getWeather(StationRequest) returns (Weather);
 }
 
-message LoginRequest{
-       string username = 1 ;
-       string password = 2 ;
+message StationRequest {
+	string stationID = 1;
 }
 
-message APIResponse{
-      string responsemessage = 1;
-      int32  responseCode  = 2;
-}
 
 message MesonetData{
 	string stationID = 1;
 	string stationName = 2;
 	string stationType = 3;
+}
+
+message AllData{
+	StationData stationData=1;
+	LocationData locationData = 2;
+	Time time=3;
+	Weather weather = 4;
+	Wind wind = 5;
+	Precipitation precipitation = 6;
+}
+
+message StationData{
+	string stationID = 1;
+	string stationName = 2;
+	string stationType = 3;
+}
+
+message LocationData {
+	string locationName = 1;
+	float latitude =2 ;
+	float longitude = 3;
+	double elevation = 4;
+}
+
+message Time {
+	double timeObs=1;
+	double timeReport=2;
+	double timeReceived=3;
+}
+
+message Weather {
+	double temperature=1;
+	string temperatureQC=2;
+	double dewpoint=3;
+	double relHumidity=4;
+	double stationPressure=5;
+	double seaLevelPress=6;
+	double altimeter=7;
+}
+
+message Wind{
+	double windDir =1;
+	double windSpeed=2;
+	string windSpeedQC=3;
+	double windGust=4;
+}
+
+message Precipitation {
+	double precip=1;
+	double precipAccum=2;
+	double precipRate=3;
+	int32 precipIntensity=4;
 }
 
 message MesonetDataList {

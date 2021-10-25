@@ -27,70 +27,6 @@ public final class userGrpc {
   public static final String SERVICE_NAME = "user";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<com.cmpe275.lab1.User.LoginRequest,
-      com.cmpe275.lab1.User.APIResponse> getLoginMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "login",
-      requestType = com.cmpe275.lab1.User.LoginRequest.class,
-      responseType = com.cmpe275.lab1.User.APIResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.cmpe275.lab1.User.LoginRequest,
-      com.cmpe275.lab1.User.APIResponse> getLoginMethod() {
-    io.grpc.MethodDescriptor<com.cmpe275.lab1.User.LoginRequest, com.cmpe275.lab1.User.APIResponse> getLoginMethod;
-    if ((getLoginMethod = userGrpc.getLoginMethod) == null) {
-      synchronized (userGrpc.class) {
-        if ((getLoginMethod = userGrpc.getLoginMethod) == null) {
-          userGrpc.getLoginMethod = getLoginMethod = 
-              io.grpc.MethodDescriptor.<com.cmpe275.lab1.User.LoginRequest, com.cmpe275.lab1.User.APIResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "user", "login"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.cmpe275.lab1.User.LoginRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.cmpe275.lab1.User.APIResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new userMethodDescriptorSupplier("login"))
-                  .build();
-          }
-        }
-     }
-     return getLoginMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.cmpe275.lab1.User.Empty,
-      com.cmpe275.lab1.User.APIResponse> getLogoutMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "logout",
-      requestType = com.cmpe275.lab1.User.Empty.class,
-      responseType = com.cmpe275.lab1.User.APIResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.cmpe275.lab1.User.Empty,
-      com.cmpe275.lab1.User.APIResponse> getLogoutMethod() {
-    io.grpc.MethodDescriptor<com.cmpe275.lab1.User.Empty, com.cmpe275.lab1.User.APIResponse> getLogoutMethod;
-    if ((getLogoutMethod = userGrpc.getLogoutMethod) == null) {
-      synchronized (userGrpc.class) {
-        if ((getLogoutMethod = userGrpc.getLogoutMethod) == null) {
-          userGrpc.getLogoutMethod = getLogoutMethod = 
-              io.grpc.MethodDescriptor.<com.cmpe275.lab1.User.Empty, com.cmpe275.lab1.User.APIResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "user", "logout"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.cmpe275.lab1.User.Empty.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.cmpe275.lab1.User.APIResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new userMethodDescriptorSupplier("logout"))
-                  .build();
-          }
-        }
-     }
-     return getLogoutMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<com.cmpe275.lab1.User.Empty,
       com.cmpe275.lab1.User.MesonetDataList> getGetMesonetDataMethod;
 
@@ -121,38 +57,6 @@ public final class userGrpc {
         }
      }
      return getGetMesonetDataMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<com.cmpe275.lab1.User.Empty,
-      com.cmpe275.lab1.User.MesonetDataList> getGetMesonetData2Method;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "getMesonetData2",
-      requestType = com.cmpe275.lab1.User.Empty.class,
-      responseType = com.cmpe275.lab1.User.MesonetDataList.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<com.cmpe275.lab1.User.Empty,
-      com.cmpe275.lab1.User.MesonetDataList> getGetMesonetData2Method() {
-    io.grpc.MethodDescriptor<com.cmpe275.lab1.User.Empty, com.cmpe275.lab1.User.MesonetDataList> getGetMesonetData2Method;
-    if ((getGetMesonetData2Method = userGrpc.getGetMesonetData2Method) == null) {
-      synchronized (userGrpc.class) {
-        if ((getGetMesonetData2Method = userGrpc.getGetMesonetData2Method) == null) {
-          userGrpc.getGetMesonetData2Method = getGetMesonetData2Method = 
-              io.grpc.MethodDescriptor.<com.cmpe275.lab1.User.Empty, com.cmpe275.lab1.User.MesonetDataList>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "user", "getMesonetData2"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.cmpe275.lab1.User.Empty.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.cmpe275.lab1.User.MesonetDataList.getDefaultInstance()))
-                  .setSchemaDescriptor(new userMethodDescriptorSupplier("getMesonetData2"))
-                  .build();
-          }
-        }
-     }
-     return getGetMesonetData2Method;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.cmpe275.lab1.User.Empty,
@@ -187,6 +91,102 @@ public final class userGrpc {
      return getGetMesonetDataStreamMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.cmpe275.lab1.User.Empty,
+      com.cmpe275.lab1.User.AllData> getGetAllDataMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "getAllData",
+      requestType = com.cmpe275.lab1.User.Empty.class,
+      responseType = com.cmpe275.lab1.User.AllData.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.cmpe275.lab1.User.Empty,
+      com.cmpe275.lab1.User.AllData> getGetAllDataMethod() {
+    io.grpc.MethodDescriptor<com.cmpe275.lab1.User.Empty, com.cmpe275.lab1.User.AllData> getGetAllDataMethod;
+    if ((getGetAllDataMethod = userGrpc.getGetAllDataMethod) == null) {
+      synchronized (userGrpc.class) {
+        if ((getGetAllDataMethod = userGrpc.getGetAllDataMethod) == null) {
+          userGrpc.getGetAllDataMethod = getGetAllDataMethod = 
+              io.grpc.MethodDescriptor.<com.cmpe275.lab1.User.Empty, com.cmpe275.lab1.User.AllData>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "user", "getAllData"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.cmpe275.lab1.User.Empty.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.cmpe275.lab1.User.AllData.getDefaultInstance()))
+                  .setSchemaDescriptor(new userMethodDescriptorSupplier("getAllData"))
+                  .build();
+          }
+        }
+     }
+     return getGetAllDataMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.cmpe275.lab1.User.StationRequest,
+      com.cmpe275.lab1.User.AllData> getGetStationDataMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "getStationData",
+      requestType = com.cmpe275.lab1.User.StationRequest.class,
+      responseType = com.cmpe275.lab1.User.AllData.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.cmpe275.lab1.User.StationRequest,
+      com.cmpe275.lab1.User.AllData> getGetStationDataMethod() {
+    io.grpc.MethodDescriptor<com.cmpe275.lab1.User.StationRequest, com.cmpe275.lab1.User.AllData> getGetStationDataMethod;
+    if ((getGetStationDataMethod = userGrpc.getGetStationDataMethod) == null) {
+      synchronized (userGrpc.class) {
+        if ((getGetStationDataMethod = userGrpc.getGetStationDataMethod) == null) {
+          userGrpc.getGetStationDataMethod = getGetStationDataMethod = 
+              io.grpc.MethodDescriptor.<com.cmpe275.lab1.User.StationRequest, com.cmpe275.lab1.User.AllData>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "user", "getStationData"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.cmpe275.lab1.User.StationRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.cmpe275.lab1.User.AllData.getDefaultInstance()))
+                  .setSchemaDescriptor(new userMethodDescriptorSupplier("getStationData"))
+                  .build();
+          }
+        }
+     }
+     return getGetStationDataMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.cmpe275.lab1.User.StationRequest,
+      com.cmpe275.lab1.User.Weather> getGetWeatherMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "getWeather",
+      requestType = com.cmpe275.lab1.User.StationRequest.class,
+      responseType = com.cmpe275.lab1.User.Weather.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.cmpe275.lab1.User.StationRequest,
+      com.cmpe275.lab1.User.Weather> getGetWeatherMethod() {
+    io.grpc.MethodDescriptor<com.cmpe275.lab1.User.StationRequest, com.cmpe275.lab1.User.Weather> getGetWeatherMethod;
+    if ((getGetWeatherMethod = userGrpc.getGetWeatherMethod) == null) {
+      synchronized (userGrpc.class) {
+        if ((getGetWeatherMethod = userGrpc.getGetWeatherMethod) == null) {
+          userGrpc.getGetWeatherMethod = getGetWeatherMethod = 
+              io.grpc.MethodDescriptor.<com.cmpe275.lab1.User.StationRequest, com.cmpe275.lab1.User.Weather>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(
+                  "user", "getWeather"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.cmpe275.lab1.User.StationRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.cmpe275.lab1.User.Weather.getDefaultInstance()))
+                  .setSchemaDescriptor(new userMethodDescriptorSupplier("getWeather"))
+                  .build();
+          }
+        }
+     }
+     return getGetWeatherMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -216,30 +216,9 @@ public final class userGrpc {
 
     /**
      */
-    public void login(com.cmpe275.lab1.User.LoginRequest request,
-        io.grpc.stub.StreamObserver<com.cmpe275.lab1.User.APIResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getLoginMethod(), responseObserver);
-    }
-
-    /**
-     */
-    public void logout(com.cmpe275.lab1.User.Empty request,
-        io.grpc.stub.StreamObserver<com.cmpe275.lab1.User.APIResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getLogoutMethod(), responseObserver);
-    }
-
-    /**
-     */
     public void getMesonetData(com.cmpe275.lab1.User.Empty request,
         io.grpc.stub.StreamObserver<com.cmpe275.lab1.User.MesonetDataList> responseObserver) {
       asyncUnimplementedUnaryCall(getGetMesonetDataMethod(), responseObserver);
-    }
-
-    /**
-     */
-    public void getMesonetData2(com.cmpe275.lab1.User.Empty request,
-        io.grpc.stub.StreamObserver<com.cmpe275.lab1.User.MesonetDataList> responseObserver) {
-      asyncUnimplementedUnaryCall(getGetMesonetData2Method(), responseObserver);
     }
 
     /**
@@ -249,22 +228,29 @@ public final class userGrpc {
       asyncUnimplementedUnaryCall(getGetMesonetDataStreamMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void getAllData(com.cmpe275.lab1.User.Empty request,
+        io.grpc.stub.StreamObserver<com.cmpe275.lab1.User.AllData> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetAllDataMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void getStationData(com.cmpe275.lab1.User.StationRequest request,
+        io.grpc.stub.StreamObserver<com.cmpe275.lab1.User.AllData> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetStationDataMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void getWeather(com.cmpe275.lab1.User.StationRequest request,
+        io.grpc.stub.StreamObserver<com.cmpe275.lab1.User.Weather> responseObserver) {
+      asyncUnimplementedUnaryCall(getGetWeatherMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-            getLoginMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                com.cmpe275.lab1.User.LoginRequest,
-                com.cmpe275.lab1.User.APIResponse>(
-                  this, METHODID_LOGIN)))
-          .addMethod(
-            getLogoutMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                com.cmpe275.lab1.User.Empty,
-                com.cmpe275.lab1.User.APIResponse>(
-                  this, METHODID_LOGOUT)))
           .addMethod(
             getGetMesonetDataMethod(),
             asyncUnaryCall(
@@ -273,19 +259,33 @@ public final class userGrpc {
                 com.cmpe275.lab1.User.MesonetDataList>(
                   this, METHODID_GET_MESONET_DATA)))
           .addMethod(
-            getGetMesonetData2Method(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                com.cmpe275.lab1.User.Empty,
-                com.cmpe275.lab1.User.MesonetDataList>(
-                  this, METHODID_GET_MESONET_DATA2)))
-          .addMethod(
             getGetMesonetDataStreamMethod(),
             asyncServerStreamingCall(
               new MethodHandlers<
                 com.cmpe275.lab1.User.Empty,
                 com.cmpe275.lab1.User.MesonetDataList>(
                   this, METHODID_GET_MESONET_DATA_STREAM)))
+          .addMethod(
+            getGetAllDataMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.cmpe275.lab1.User.Empty,
+                com.cmpe275.lab1.User.AllData>(
+                  this, METHODID_GET_ALL_DATA)))
+          .addMethod(
+            getGetStationDataMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.cmpe275.lab1.User.StationRequest,
+                com.cmpe275.lab1.User.AllData>(
+                  this, METHODID_GET_STATION_DATA)))
+          .addMethod(
+            getGetWeatherMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                com.cmpe275.lab1.User.StationRequest,
+                com.cmpe275.lab1.User.Weather>(
+                  this, METHODID_GET_WEATHER)))
           .build();
     }
   }
@@ -310,22 +310,6 @@ public final class userGrpc {
 
     /**
      */
-    public void login(com.cmpe275.lab1.User.LoginRequest request,
-        io.grpc.stub.StreamObserver<com.cmpe275.lab1.User.APIResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getLoginMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void logout(com.cmpe275.lab1.User.Empty request,
-        io.grpc.stub.StreamObserver<com.cmpe275.lab1.User.APIResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getLogoutMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
     public void getMesonetData(com.cmpe275.lab1.User.Empty request,
         io.grpc.stub.StreamObserver<com.cmpe275.lab1.User.MesonetDataList> responseObserver) {
       asyncUnaryCall(
@@ -334,18 +318,34 @@ public final class userGrpc {
 
     /**
      */
-    public void getMesonetData2(com.cmpe275.lab1.User.Empty request,
-        io.grpc.stub.StreamObserver<com.cmpe275.lab1.User.MesonetDataList> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getGetMesonetData2Method(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
     public void getMesonetDataStream(com.cmpe275.lab1.User.Empty request,
         io.grpc.stub.StreamObserver<com.cmpe275.lab1.User.MesonetDataList> responseObserver) {
       asyncServerStreamingCall(
           getChannel().newCall(getGetMesonetDataStreamMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getAllData(com.cmpe275.lab1.User.Empty request,
+        io.grpc.stub.StreamObserver<com.cmpe275.lab1.User.AllData> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetAllDataMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getStationData(com.cmpe275.lab1.User.StationRequest request,
+        io.grpc.stub.StreamObserver<com.cmpe275.lab1.User.AllData> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetStationDataMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void getWeather(com.cmpe275.lab1.User.StationRequest request,
+        io.grpc.stub.StreamObserver<com.cmpe275.lab1.User.Weather> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getGetWeatherMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -369,30 +369,9 @@ public final class userGrpc {
 
     /**
      */
-    public com.cmpe275.lab1.User.APIResponse login(com.cmpe275.lab1.User.LoginRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getLoginMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.cmpe275.lab1.User.APIResponse logout(com.cmpe275.lab1.User.Empty request) {
-      return blockingUnaryCall(
-          getChannel(), getLogoutMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
     public com.cmpe275.lab1.User.MesonetDataList getMesonetData(com.cmpe275.lab1.User.Empty request) {
       return blockingUnaryCall(
           getChannel(), getGetMesonetDataMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public com.cmpe275.lab1.User.MesonetDataList getMesonetData2(com.cmpe275.lab1.User.Empty request) {
-      return blockingUnaryCall(
-          getChannel(), getGetMesonetData2Method(), getCallOptions(), request);
     }
 
     /**
@@ -401,6 +380,27 @@ public final class userGrpc {
         com.cmpe275.lab1.User.Empty request) {
       return blockingServerStreamingCall(
           getChannel(), getGetMesonetDataStreamMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.cmpe275.lab1.User.AllData getAllData(com.cmpe275.lab1.User.Empty request) {
+      return blockingUnaryCall(
+          getChannel(), getGetAllDataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.cmpe275.lab1.User.AllData getStationData(com.cmpe275.lab1.User.StationRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetStationDataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public com.cmpe275.lab1.User.Weather getWeather(com.cmpe275.lab1.User.StationRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getGetWeatherMethod(), getCallOptions(), request);
     }
   }
 
@@ -424,22 +424,6 @@ public final class userGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.cmpe275.lab1.User.APIResponse> login(
-        com.cmpe275.lab1.User.LoginRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getLoginMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.cmpe275.lab1.User.APIResponse> logout(
-        com.cmpe275.lab1.User.Empty request) {
-      return futureUnaryCall(
-          getChannel().newCall(getLogoutMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
     public com.google.common.util.concurrent.ListenableFuture<com.cmpe275.lab1.User.MesonetDataList> getMesonetData(
         com.cmpe275.lab1.User.Empty request) {
       return futureUnaryCall(
@@ -448,18 +432,34 @@ public final class userGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.cmpe275.lab1.User.MesonetDataList> getMesonetData2(
+    public com.google.common.util.concurrent.ListenableFuture<com.cmpe275.lab1.User.AllData> getAllData(
         com.cmpe275.lab1.User.Empty request) {
       return futureUnaryCall(
-          getChannel().newCall(getGetMesonetData2Method(), getCallOptions()), request);
+          getChannel().newCall(getGetAllDataMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.cmpe275.lab1.User.AllData> getStationData(
+        com.cmpe275.lab1.User.StationRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetStationDataMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.cmpe275.lab1.User.Weather> getWeather(
+        com.cmpe275.lab1.User.StationRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getGetWeatherMethod(), getCallOptions()), request);
     }
   }
 
-  private static final int METHODID_LOGIN = 0;
-  private static final int METHODID_LOGOUT = 1;
-  private static final int METHODID_GET_MESONET_DATA = 2;
-  private static final int METHODID_GET_MESONET_DATA2 = 3;
-  private static final int METHODID_GET_MESONET_DATA_STREAM = 4;
+  private static final int METHODID_GET_MESONET_DATA = 0;
+  private static final int METHODID_GET_MESONET_DATA_STREAM = 1;
+  private static final int METHODID_GET_ALL_DATA = 2;
+  private static final int METHODID_GET_STATION_DATA = 3;
+  private static final int METHODID_GET_WEATHER = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -478,25 +478,25 @@ public final class userGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_LOGIN:
-          serviceImpl.login((com.cmpe275.lab1.User.LoginRequest) request,
-              (io.grpc.stub.StreamObserver<com.cmpe275.lab1.User.APIResponse>) responseObserver);
-          break;
-        case METHODID_LOGOUT:
-          serviceImpl.logout((com.cmpe275.lab1.User.Empty) request,
-              (io.grpc.stub.StreamObserver<com.cmpe275.lab1.User.APIResponse>) responseObserver);
-          break;
         case METHODID_GET_MESONET_DATA:
           serviceImpl.getMesonetData((com.cmpe275.lab1.User.Empty) request,
-              (io.grpc.stub.StreamObserver<com.cmpe275.lab1.User.MesonetDataList>) responseObserver);
-          break;
-        case METHODID_GET_MESONET_DATA2:
-          serviceImpl.getMesonetData2((com.cmpe275.lab1.User.Empty) request,
               (io.grpc.stub.StreamObserver<com.cmpe275.lab1.User.MesonetDataList>) responseObserver);
           break;
         case METHODID_GET_MESONET_DATA_STREAM:
           serviceImpl.getMesonetDataStream((com.cmpe275.lab1.User.Empty) request,
               (io.grpc.stub.StreamObserver<com.cmpe275.lab1.User.MesonetDataList>) responseObserver);
+          break;
+        case METHODID_GET_ALL_DATA:
+          serviceImpl.getAllData((com.cmpe275.lab1.User.Empty) request,
+              (io.grpc.stub.StreamObserver<com.cmpe275.lab1.User.AllData>) responseObserver);
+          break;
+        case METHODID_GET_STATION_DATA:
+          serviceImpl.getStationData((com.cmpe275.lab1.User.StationRequest) request,
+              (io.grpc.stub.StreamObserver<com.cmpe275.lab1.User.AllData>) responseObserver);
+          break;
+        case METHODID_GET_WEATHER:
+          serviceImpl.getWeather((com.cmpe275.lab1.User.StationRequest) request,
+              (io.grpc.stub.StreamObserver<com.cmpe275.lab1.User.Weather>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -559,11 +559,11 @@ public final class userGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new userFileDescriptorSupplier())
-              .addMethod(getLoginMethod())
-              .addMethod(getLogoutMethod())
               .addMethod(getGetMesonetDataMethod())
-              .addMethod(getGetMesonetData2Method())
               .addMethod(getGetMesonetDataStreamMethod())
+              .addMethod(getGetAllDataMethod())
+              .addMethod(getGetStationDataMethod())
+              .addMethod(getGetWeatherMethod())
               .build();
         }
       }

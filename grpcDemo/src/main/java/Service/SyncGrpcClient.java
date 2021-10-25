@@ -27,17 +27,11 @@ public class SyncGrpcClient {
 		
 		long start = System.currentTimeMillis();
 		
-		
-//		MesonetDataList mesonetData = userStub.getMesonetData2(null);
-//		MesonetDataList mesonetData2 = userStub.getMesonetData2(null);
-		
 		for(int i=0;i<5000;i++) {
 			userStub.getMesonetData(null);
 			System.out.println("Total time taken for serving "+ i +  " requests synchronously: " + (System.currentTimeMillis()-start));
 			
 		}
-		
-		
 		long end = System.currentTimeMillis();
 		System.out.println("time taken : " + (end-start));
 		

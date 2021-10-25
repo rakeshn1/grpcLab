@@ -5,6 +5,7 @@ import com.cmpe275.lab1.userGrpc;
 import java.net.InetSocketAddress;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executors;
 
 import com.cmpe275.lab1.User.MesonetDataList;
 import com.cmpe275.lab1.userGrpc.userStub;
@@ -24,7 +25,7 @@ public class AsyncGrpcClient {
 	public static void main(String[] args) {
 		
 
-		ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 9000).maxInboundMessageSize(1024 * 1024 * 1024).usePlaintext()
+		ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 9000).maxInboundMessageSize(1024 * 1024 * 1024).executor(Executors.newFixedThreadPool(3)).usePlaintext()
 				.build();
 		
 		userStub userStub = userGrpc.newStub(channel);
@@ -37,21 +38,23 @@ public class AsyncGrpcClient {
 		}
 
 		int j = 0;
-		for (int i = 0; i < 5000; i++) {
+		for (int i = 0; i < 150; i++) {
 //			userStubs.get(j%3).getMesonetData(null, new mesonetCallback());
 //			j++;
 			userStub.getMesonetData(null, new mesonetCallback());
 		}
 
-		try {
-			Thread.sleep(100000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		while (true) {
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+				break;
+			}
 		}
 	}
 
-	private static class mesonetCallback implements StreamObserver<MesonetDataList> {
+	public static class mesonetCallback implements StreamObserver<MesonetDataList> {
 
 		@Override
 		public void onNext(MesonetDataList value) {
@@ -67,7 +70,6 @@ public class AsyncGrpcClient {
 
 		@Override
 		public void onCompleted() {
-
 //            System.out.println("Stream completed for " + count);
 		}
 	}
