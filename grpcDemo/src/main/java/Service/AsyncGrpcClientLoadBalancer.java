@@ -29,6 +29,7 @@ public class AsyncGrpcClientLoadBalancer {
 			userStub userStub = userGrpc.newStub(channel);
 			userStubs.add(userStub);
 		}
+		start = System.currentTimeMillis();
 	}
 	public void stopClient() {
 		_forever = false;
@@ -37,7 +38,7 @@ public class AsyncGrpcClientLoadBalancer {
 	public void addWork() {
 		balancer++;
 		count++;
-		userStubs.get(balancer%3).getMesonetData(null, new mesonetCallback());
+		userStubs.get(balancer%3).getTopTen(null, new mesonetCallback());
 	}
 	
 	public boolean hasWork() {
@@ -60,7 +61,7 @@ public class AsyncGrpcClientLoadBalancer {
 		public void onNext(MesonetDataList value) {
 			decrement();
 			long end = System.currentTimeMillis();
-			System.out.println("time taken to server " + count + " requests asynchronously : " + (end - start));
+			System.out.println("time taken to server " + " requests asynchronously : " + (end - start));
 		}
 
 		@Override
