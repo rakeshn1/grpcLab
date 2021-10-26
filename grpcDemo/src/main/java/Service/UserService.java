@@ -40,7 +40,8 @@ public class UserService extends userImplBase {
 
 				System.out.println("request started at : " + port);
 				MesonetDataList.Builder dataListBuilder = MesonetDataList.newBuilder();
-//				
+				
+				for (int i=0; i<10;i++) {
 				for (gash.obs.madis.MesonetData d : data) {
 					MesonetData.Builder dataBuilder = MesonetData.newBuilder();
 					dataBuilder.setStationID(d.getStationID());
@@ -48,6 +49,8 @@ public class UserService extends userImplBase {
 					dataBuilder.setStationType(d.getStationType());
 					dataListBuilder.addMesonetData(dataBuilder);
 				}
+				}
+				
 
 				MesonetDataList mesonetDataList = dataListBuilder.build();
 
