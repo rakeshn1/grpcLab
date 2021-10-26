@@ -38,10 +38,11 @@ public class AsyncGrpcClient {
 		}
 
 		int j = 0;
-		for (int i = 0; i < 150; i++) {
+		for (int i = 0; i < 5000; i++) {
 //			userStubs.get(j%3).getMesonetData(null, new mesonetCallback());
 //			j++;
-			userStub.getMesonetData(null, new mesonetCallback());
+			userStub.getTopTen(null, new mesonetCallback());
+//			userStub.getMesonetData(null, new mesonetCallback());
 		}
 
 		while (true) {

@@ -28,6 +28,7 @@ public class SyncGrpcClient {
 		long start = System.currentTimeMillis();
 		
 		for(int i=0;i<5000;i++) {
+//			userStub.getMesonetData(null);
 			userStub.getTopTen(null);
 			System.out.println("Total time taken for serving "+ i +  " requests synchronously: " + (System.currentTimeMillis()-start));
 			

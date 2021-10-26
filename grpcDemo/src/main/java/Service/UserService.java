@@ -6,9 +6,13 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+import com.cmpe275.lab1.User.AllData;
 import com.cmpe275.lab1.User.Empty;
 import com.cmpe275.lab1.User.MesonetData;
 import com.cmpe275.lab1.User.MesonetDataList;
+import com.cmpe275.lab1.User.StationRequest;
+import com.cmpe275.lab1.User.Weather;
+import com.cmpe275.lab1.User.Weather.Builder;
 import com.cmpe275.lab1.userGrpc.userImplBase;
 
 import gash.obs.madis.MesonetProcessor;
@@ -89,10 +93,39 @@ public class UserService extends userImplBase {
 			dataBuilder.setStationName(data.get(i).getStationName());
 			dataBuilder.setStationType(data.get(i).getStationType());
 			dataListBuilder.addMesonetData(dataBuilder);
-			MesonetDataList mesonetDataList = dataListBuilder.build();
-			responseObserver.onNext(mesonetDataList);
 		}
+		MesonetDataList mesonetDataList = dataListBuilder.build();
+		responseObserver.onNext(mesonetDataList);
 		responseObserver.onCompleted();
 		System.out.println("ended");
 	}
+
+	@Override
+	public void getWeather(StationRequest request, StreamObserver<Weather> responseObserver) {
+		String stationId = request.getStationID();
+		Weather.Builder weatherObject = Weather.newBuilder();
+		for (gash.obs.madis.MesonetData d : data) {
+			if(d.getStationID().equals(stationId)) {
+				weatherObject.setAltimeter(d.getAltimeter());
+				weatherObject.setDewpoint(d.getDewpoint());
+				weatherObject.setRelHumidity(d.getRelHumidity());
+				weatherObject.setSeaLevelPress(d.getSeaLevelPress());
+				weatherObject.setStationPressure(d.getStationPressure());
+				weatherObject.setTemperature(d.getTemperature());
+				weatherObject.setTemperatureQC(d.getTemperatureQC());
+				break;
+			}
+		}
+		responseObserver.onNext(weatherObject.build());
+		responseObserver.onCompleted();
+	}
+
+	@Override
+	public void getAllData(Empty request, StreamObserver<AllData> responseObserver) {
+		AllData.Builder allData = AllData.newBuilder();
+	}
+	
+	
+	
+	
 }
