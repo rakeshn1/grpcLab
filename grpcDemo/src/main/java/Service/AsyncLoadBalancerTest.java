@@ -1,6 +1,6 @@
 package Service;
 
-public class AsyncTestGrpc {
+public class AsyncLoadBalancerTest {
 	
 	public static void main(String[] args) throws InterruptedException {
 		
@@ -13,7 +13,7 @@ public class AsyncTestGrpc {
 		
 		AsyncGrpcClientLoadBalancer loadBalancer = new AsyncGrpcClientLoadBalancer();
 		
-		for(int i=0; i<10; i++) {			
+		for(int i=0; i<100; i++) {			
 			loadBalancer.addWork();
 		}
 		
